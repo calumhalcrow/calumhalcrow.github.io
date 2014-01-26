@@ -1,15 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://calumhalcrow.github.io/blog/2014/01/26/new-blogging-setup/</loc>
+        <lastmod>2014-01-26T04:24:21+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://calumhalcrow.github.io/about/</loc>
+        <lastmod>2014-01-26T05:06:42+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://calumhalcrow.github.io/blog/</loc>
+        <lastmod>2014-01-26T04:24:21+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://calumhalcrow.github.io/blog/archives/</loc>
-        <lastmod>2013-10-20T12:50:42+08:00</lastmod>
+        <lastmod>2014-01-26T04:24:21+00:00</lastmod>
     </url>
     <url>
         <loc>http://calumhalcrow.github.io/</loc>
-        <lastmod>2013-10-20T12:50:42+08:00</lastmod>
+        <lastmod>2014-01-26T04:24:21+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://calumhalcrow.github.io/projects/</loc>
+        <lastmod>2014-01-26T05:06:42+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://calumhalcrow.github.io/archives/</loc>
+        <lastmod>2014-01-26T04:24:21+00:00</lastmod>
     </url>
     <url>
         <loc>http://calumhalcrow.github.io/robots.txt</loc>
-        <lastmod>2013-10-20T12:50:42+08:00</lastmod>
+        <lastmod>2014-01-26T04:04:29+00:00</lastmod>
     </url>
 </urlset>

@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.github.io/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.github.io/"/>
-  <updated>2013-10-20T12:52:49+08:00</updated>
+  <updated>2014-01-26T05:06:43+00:00</updated>
   <id>http://calumhalcrow.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Calum Halcrow]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Blogging Setup]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2014/01/26/new-blogging-setup/"/>
+    <updated>2014-01-26T04:14:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2014/01/26/new-blogging-setup</id>
+    <content type="html"><![CDATA[<p>Part of my forward looking plans have been to migrate <a href="http://calumhalcrow.com">calumhalcrow.com</a>
+onto a static blogging platform, therefore having more control over the code that drives it.</p>
+
+<p>I decided to use <a href="http://octopress.org">Octopress</a> (with the <a href="https://github.com/macjasp/cleanpress">CleanPress</a> theme)
+hosted on <a href="http://pages.github.com">Github Pages</a>. Such a setup gives me a static blogging engine, hosted for free,
+with full control over my site yet with almost embarrassingly minimal setup work involved.</p>
+
+<p>And this is it.</p>
+]]></content>
+  </entry>
   
 </feed>
