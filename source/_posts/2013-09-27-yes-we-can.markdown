@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Yes we can, yes we cancan."
+date: 2013-09-27 08:22
+comments: true
+categories: 
+---
+
+[cancan](https://github.com/ryanb/cancan) is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to your users.
+
+You can get it working on your app by following the instructions on its [Github page](https://github.com/ryanb/cancan#installation).
+
+cancan allows you to work with two concepts: roles and abilities. A role is a classification that you give to a set of your users, an ability is something users with that role can do.
+
+At Mindvalley we use cancan in a few of our apps. I'm currently working on the next version of Daily, our internal reporting service, and we recently realized that we needed to restrict certain types of users from accessing certain reports. cancan to the rescue!
+
+Daily users fall into three distinct roles: managers, marketers and admins. Marketers will not be able to view certain high-level business reports. Admins on the other hand will be able to access everything and be able to change the role of any user.
+
+The way in which you define and assign roles to your users is left up to you. cancan does not provide functionality of that nature. It's useful however to be able to ask a user instance if it belongs to a particular role (if user.marketer?). This is what we have implemented on Daily.
+
+Once you can ask such questions, you use cancan's Ability class to define abilities for each user role. On Daily we have something like:
+
+<pre>
+    if user.admin?
+      can :manage, :all
+    elsif user.manager?
+      can :manage, :all
+      cannot :update, User
+    elsif user.marketer?
+      can :manage, :all
+      cannot :update, User
+      cannot :bundles_report, ProductLinesClient
+    end
+</pre>
+
+<p>This is (almost) understandable just by reading the code out load. "Admins can manage everything." "Managers can manage everything but they cannot update users". You may be wondering why I've repeated "can :manage, :all" three times here. Surely that's not very <abbr title="Don't Repeat Yourself">DRY</abbr>. Well, I feel it reads more naturally this way, and doesn't allow for a user with a rogue role to slip into the system and have access to everything (prizes up for grabs for better solutions though; just send me a pull request ;-).
+
+The reason I said this is "almost" readable is because of the last "cannot" statement. "Marketers cannot bundles-report a product-lines-client." What is that supposed to mean?? Well, technically this relates back to the specific method "bundles_report" on the "ProductLinesClient" class that returns the report that marketers are not allowed to access. But this unclear naming suggests a [code smell](http://www.codinghorror.com/blog/2006/05/code-smells.html); the way we've arranged our model classes doesn't map clearly to the types of data we're reporting on. We'll need to look into nipping this naming confusion in the bud in the near future while Daily's code is still new and easily changeable...
+
+Up next week: saner model structure with the help of [ActiveResource](https://github.com/rails/activeresource)? :-)
