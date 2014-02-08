@@ -7,8 +7,7 @@ sharing: true
 footer: true
 ---
 
-Projects
---------
+<h2 class="title">Projects</h2>
 
 Here's a run-down of some of the projects I've been involved in. The "Tech stack" underneath each lists major technologies used in the project, in particular the ones I am most familiar with.
 
