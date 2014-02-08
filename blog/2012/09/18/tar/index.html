@@ -1,0 +1,239 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>tar | Calum Halcrow</title>
+
+<meta name="author" content="Calum Halcrow"> 
+
+<meta name="description" content="[calum@calumlaptop ~]$ tar --help
+Usage: tar [OPTION...] [FILE]...
+GNU `tar' saves many files together into a single tape or disk archive, and can &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Calum Halcrow" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Calum Halcrow</a></h1>
+<nav id="main-nav"><ul>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/projects">Projects</a></li>
+	<li><a href="http://github.com/calumhalcrow">Github</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/projects">Projects</a></li>
+	<li><a href="http://github.com/calumhalcrow">Github</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:calumhalcrow.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Tar</h2>
+	<div class="entry-content"><pre>[calum@calumlaptop ~]$ tar --help
+Usage: tar [OPTION...] [FILE]...
+GNU `tar' saves many files together into a single tape or disk archive, and can
+restore individual files from the archive.
+
+Examples:
+  tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.
+...
+...
+[ Huge amount of help stuff...]
+...
+...
+ Other options:
+
+  -?, --help                 give this help list
+      --restrict             disable use of some potentially harmful options
+      --usage                give a short usage message
+...
+</pre>
+
+
+<p>Aha! I fancy some of that &ldquo;short usage message&rdquo;&hellip;</p>
+
+<pre>
+[calum@calumlaptop ~]$ tar --usage
+Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
+            [-F NAME] [-L NUMBER] [-b BLOCKS] [-H FORMAT] [-V TEXT] [-I PROG]
+            [-C DIR] [-K MEMBER-NAME] [-N DATE-OR-FILE] [-T FILE] [-X FILE]
+            [--catenate] [--concatenate] [--create] [--diff] [--compare]
+            [--delete] [--append] [--list] [--test-label] [--update]
+            [--extract] [--get] [--check-device] [--listed-incremental=FILE]
+            [--incremental] [--ignore-failed-read] [--level=NUMBER] [--seek]
+            [--no-check-device] [--no-seek] [--occurrence[=NUMBER]]
+            [--sparse-version=MAJOR[.MINOR]] [--sparse] [--keep-old-files]
+            [--keep-newer-files] [--no-overwrite-dir] [--overwrite]
+            [--overwrite-dir] [--recursive-unlink] [--remove-files]
+            [--unlink-first] [--verify] [--ignore-command-error]
+            [--no-ignore-command-error] [--to-stdout] [--to-command=COMMAND]
+            [--atime-preserve[=METHOD]] [--delay-directory-restore]
+            [--group=NAME] [--mode=CHANGES] [--mtime=DATE-OR-FILE] [--touch]
+            [--no-delay-directory-restore] [--no-same-owner]
+            [--no-same-permissions] [--numeric-owner] [--owner=NAME]
+            [--preserve-permissions] [--same-permissions] [--preserve]
+            [--same-owner] [--preserve-order] [--same-order] [--file=ARCHIVE]
+            [--force-local] [--info-script=NAME] [--new-volume-script=NAME]
+            [--tape-length=NUMBER] [--multi-volume] [--rmt-command=COMMAND]
+            [--rsh-command=COMMAND] [--volno-file=FILE]
+            [--blocking-factor=BLOCKS] [--read-full-records] [--ignore-zeros]
+            [--record-size=NUMBER] [--format=FORMAT] [--old-archive]
+            [--portability]
+            [--pax-option=keyword[[:]=value][,keyword[[:]=value]]...] [--posix]
+            [--label=TEXT] [--auto-compress] [--use-compress-program=PROG]
+            [--bzip2] [--xz] [--lzip] [--lzma] [--lzop] [--no-auto-compress]
+            [--gzip] [--gunzip] [--ungzip] [--compress] [--uncompress]
+            [--add-file=FILE] [--backup[=CONTROL]] [--directory=DIR]
+            [--exclude=PATTERN] [--exclude-backups] [--exclude-caches]
+            [--exclude-caches-all] [--exclude-caches-under]
+            [--exclude-tag=FILE] [--exclude-tag-all=FILE]
+            [--exclude-tag-under=FILE] [--exclude-vcs] [--dereference]
+            [--hard-dereference] [--starting-file=MEMBER-NAME]
+            [--newer-mtime=DATE] [--no-null] [--no-recursion] [--no-unquote]
+            [--null] [--newer=DATE-OR-FILE] [--after-date=DATE-OR-FILE]
+            [--one-file-system] [--absolute-names] [--recursion]
+            [--suffix=STRING] [--files-from=FILE] [--unquote]
+            [--exclude-from=FILE] [--strip-components=NUMBER]
+            [--transform=EXPRESSION] [--xform=EXPRESSION] [--anchored]
+            [--ignore-case] [--no-anchored] [--no-ignore-case] [--no-wildcards]
+            [--no-wildcards-match-slash] [--wildcards]
+            [--wildcards-match-slash] [--checkpoint[=NUMBER]]
+            [--checkpoint-action=ACTION] [--full-time] [--index-file=FILE]
+            [--check-links] [--no-quote-chars=STRING] [--quote-chars=STRING]
+            [--quoting-style=STYLE] [--block-number] [--show-defaults]
+            [--show-omitted-dirs] [--show-transformed-names]
+            [--show-stored-names] [--totals[=SIGNAL]] [--utc] [--verbose]
+            [--warning=KEYWORD] [--interactive] [--confirmation] [--help]
+            [--restrict] [--usage] [--version] [FILE]...
+</pre>
+
+
+<p>Wow!</p>
+
+<p>[Just tar making my day :D]</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-18T09:18:00+00:00" pubdate data-updated="true">Sep 18<span>th</span>, 2012</time></div>
+	
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Calum Halcrow
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

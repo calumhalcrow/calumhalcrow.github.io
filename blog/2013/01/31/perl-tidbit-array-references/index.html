@@ -5,11 +5,11 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>Blog Archives | Calum Halcrow</title>
+	<title>Perl tidbit: array references. | Calum Halcrow</title>
 
 <meta name="author" content="Calum Halcrow"> 
 
-<meta name="description" content="2014 New Blogging Setup Jan 26 2013 Yes we can, yes we cancan. Sep 27 Perl tidbit: array references. Jan 31 2012 Knowledge Sharing Push and Pull. &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="It can be useful to know the difference between \@a and [@a] for an array @a with regard to array references. Take a look at the little script below &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -92,134 +92,77 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Perl Tidbit: Array References.</h2>
+	<div class="entry-content"><p>It can be useful to know the difference between <code>\@a</code> and <code>[@a]</code> for an array <code>@a</code> with regard to array references. Take a look at the little script below:</p>
+
+<pre>
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my @a = (1,3,5);
+
+my $r1 = \@a;
+my $r2 = [@a];
+
+$r1->[0] = 'x';
+$r2->[1] = 'y';
+
+$\ = "\n";
+
+print $r1;
+print $r2;
+print join ',', @a;
+</pre>
+
+
+<p>which prints:</p>
+
+<pre>
+ARRAY(0x155ac98)
+ARRAY(0x155abf0)  # different from first
+x,3,5
+</pre>
+
+
+<p><code>\@a</code> gives you a reference to <code>@a</code>, which you can use to directly modify the array. <code>[@a]</code> creates a reference to a new array with the same content as <code>@a</code>, handy if you&rsquo;d like a &ldquo;copy&rdquo; of <code>@a</code> but do not wish to modify it through the reference.</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-31T06:27:00+00:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time></div>
 	
 
 
 	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 	
-	<section class="archives"><h1 class="year">2014</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2014/01/26/new-blogging-setup/">New Blogging Setup</a></h2>
-	<div class="meta">
-		<div class="date">Jan 26</div>
-		
-
-
-	    
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
 	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2013</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2013/09/27/yes-we-can/">Yes we can, yes we cancan.</a></h2>
-	<div class="meta">
-		<div class="date">Sep 27</div>
-		
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2013/01/31/perl-tidbit-array-references/">Perl tidbit: array references.</a></h2>
-	<div class="meta">
-		<div class="date">Jan 31</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2012</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2012/09/20/knowledge-sharing-push-and-pull/">Knowledge Sharing Push and Pull.</a></h2>
-	<div class="meta">
-		<div class="date">Sep 20</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2012/09/18/tar/">tar</a></h2>
-	<div class="meta">
-		<div class="date">Sep 18</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2012/07/29/becoming-a-polyglot-programmer/">Becoming a Polyglot Programmer.</a></h2>
-	<div class="meta">
-		<div class="date">Jul 29</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2012/05/09/equality-check/">Equality Check.</a></h2>
-	<div class="meta">
-		<div class="date">May  9</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2012/01/09/instead-of-quitting-facebook/">Instead of &#8216;quitting&#8217; Facebook.</a></h2>
-	<div class="meta">
-		<div class="date">Jan  9</div>
-		
-
-
-	    
-	</div>
-</article>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 

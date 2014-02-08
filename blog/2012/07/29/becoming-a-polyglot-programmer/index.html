@@ -1,0 +1,177 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Becoming a Polyglot Programmer. | Calum Halcrow</title>
+
+<meta name="author" content="Calum Halcrow"> 
+
+<meta name="description" content="[I&rsquo;m referring to being a programmer who is comfortable using several languages here, rather than a system built with several different &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Calum Halcrow" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Calum Halcrow</a></h1>
+<nav id="main-nav"><ul>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/projects">Projects</a></li>
+	<li><a href="http://github.com/calumhalcrow">Github</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/projects">Projects</a></li>
+	<li><a href="http://github.com/calumhalcrow">Github</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:calumhalcrow.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Becoming a Polyglot Programmer.</h2>
+	<div class="entry-content"><p>[I&rsquo;m referring to being a programmer who is comfortable using several languages here, rather than a system built with several different programming languages.]</p>
+
+<p>I spend most of my time programming in only two languages: Perl and JavaScript. I often feel I&rsquo;d like to learn a few more, or at least sample a few more. I often find this hard to do however as step-by-step beginner tutorials don&rsquo;t rub off on me too well, and taking on a full side-project can be overkill when all you want to do is try out a language (I&rsquo;m slowing becoming more and more familiar with the Python universe because of one; not necessarily a bad thing!).</p>
+
+<p>But I&rsquo;ve recently discovered a way to try new languages which involves solving actual problems: <a href="http://projecteuler.net">projecteuler.net</a>. Project Euler contains many small yet challenging mathematical problems, in a form similar to many online coding contests (like Google CodeJam). You are given a problem, have to submit the answer, and are immediately told if you are correct. This is generally good for keeping your problem solving skills sharp, but the real benefit for me is that I can attempt to solve each problem with a different language! So that&rsquo;s what I&rsquo;m going to try&hellip;</p>
+
+<p>Why is this a good thing to do? Once you&rsquo;ve learned one or two decent general-purpose languages, why bother to know about others? Well, I see a few advantages:</p>
+
+<ul>
+<li>Becoming familiar with other languages can cause you to look at problems a little differently, and to look at the problems you solve with the language you are most familiar with a little differently also. You may find that a common approach used in a newly sampled language fits well with a problem you are tackling in your day job. A paradigm shift (<abbr title="Object Oriented">OO</abbr> &ndash;> functional or asynchronous event loops) may surprise you when you learn what is possible with altogether new ways of approaching problems.</li>
+<li>Maybe there&rsquo;s a language out there that&rsquo;s just right for you. The way the syntax and external resources have been designed seems to go well with your way of thinking, and maybe its community resonates well with your personality. Maybe you&rsquo;d be more productive using it. And maybe you&rsquo;ll never discover it.</li>
+<li>If you decide to learn a new stack by say writing a Rails app, you may find you don&rsquo;t do a lot of work with the underlying language. Your learning will lack a solid foundation, leaving you confused in places and with gaps in your understanding.</li>
+<li>When job offers come up you&rsquo;ll probably know something about the language the company is working with, and you&rsquo;ll have a base to continue to learn from (if you get the job that is!).</li>
+<li>It&rsquo;s just good fun!</li>
+</ul>
+
+
+<p>I&rsquo;ve just started this, and so far have solved four problems in three languages (Perl, Python, Ruby). I&rsquo;ll probably solve two or three problems before moving onto a fourth, and will deliberately make my programs reasonably well designed (by using OOP when available, passing arguments via the command line rather than hard-coding them) in an attempt to get more exposure to each language.</p>
+
+<p>I tend to find I actually learn something when I do things this way. When I have a problem to solve, I go out and look for the syntax necessary to implement my algorithm. When I&rsquo;ve completed a problem, I plan to go off and read over the documentation of the language I used. I find that once I have a reference point (the work I just did solving the problem) I can take in the documentation much more easily. If I really liked the language, I could then decide to learn further by taking on a side-project (e.g. if I liked Ruby perhaps I could build a Rails web-app).</p>
+
+<p>Hopefully in a few months time I&rsquo;ll be familiar with quite a few new programming languages, and maybe you will be too!</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-29T08:42:00+00:00" pubdate data-updated="true">Jul 29<span>th</span>, 2012</time></div>
+	
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Calum Halcrow
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

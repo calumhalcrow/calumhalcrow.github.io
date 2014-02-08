@@ -4,7 +4,7 @@
   <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.github.io/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.github.io/"/>
-  <updated>2014-02-08T08:11:09+00:00</updated>
+  <updated>2014-02-08T08:51:07+00:00</updated>
   <id>http://calumhalcrow.github.io/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
@@ -26,6 +26,261 @@ hosted on <a href="http://pages.github.com">Github Pages</a>. Such a setup gives
 with full control over my site yet with almost embarrassingly minimal setup work involved.</p>
 
 <p>And this is it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yes we can, yes we cancan.]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2013/09/27/yes-we-can/"/>
+    <updated>2013-09-27T08:22:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2013/09/27/yes-we-can</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/ryanb/cancan">cancan</a> is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to your users.</p>
+
+<p>You can get it working on your app by following the instructions on its <a href="https://github.com/ryanb/cancan#installation">Github page</a>.</p>
+
+<p>cancan allows you to work with two concepts: roles and abilities. A role is a classification that you give to a set of your users, an ability is something users with that role can do.</p>
+
+<p>At Mindvalley we use cancan in a few of our apps. I&rsquo;m currently working on the next version of Daily, our internal reporting service, and we recently realized that we needed to restrict certain types of users from accessing certain reports. cancan to the rescue!</p>
+
+<p>Daily users fall into three distinct roles: managers, marketers and admins. Marketers will not be able to view certain high-level business reports. Admins on the other hand will be able to access everything and be able to change the role of any user.</p>
+
+<p>The way in which you define and assign roles to your users is left up to you. cancan does not provide functionality of that nature. It&rsquo;s useful however to be able to ask a user instance if it belongs to a particular role (if user.marketer?). This is what we have implemented on Daily.</p>
+
+<p>Once you can ask such questions, you use cancan&rsquo;s Ability class to define abilities for each user role. On Daily we have something like:</p>
+
+<pre>
+    if user.admin?
+      can :manage, :all
+    elsif user.manager?
+      can :manage, :all
+      cannot :update, User
+    elsif user.marketer?
+      can :manage, :all
+      cannot :update, User
+      cannot :bundles_report, ProductLinesClient
+    end
+</pre>
+
+
+
+
+<p><p>This is (almost) understandable just by reading the code out load. &ldquo;Admins can manage everything.&rdquo; &ldquo;Managers can manage everything but they cannot update users&rdquo;. You may be wondering why I&rsquo;ve repeated &ldquo;can :manage, :all&rdquo; three times here. Surely that&rsquo;s not very <abbr title="Don't Repeat Yourself">DRY</abbr>. Well, I feel it reads more naturally this way, and doesn&rsquo;t allow for a user with a rogue role to slip into the system and have access to everything (prizes up for grabs for better solutions though; just send me a pull request ;&ndash;).</p>
+
+<p>The reason I said this is &ldquo;almost&rdquo; readable is because of the last &ldquo;cannot&rdquo; statement. &ldquo;Marketers cannot bundles-report a product-lines-client.&rdquo; What is that supposed to mean?? Well, technically this relates back to the specific method &ldquo;bundles_report&rdquo; on the &ldquo;ProductLinesClient&rdquo; class that returns the report that marketers are not allowed to access. But this unclear naming suggests a <a href="http://www.codinghorror.com/blog/2006/05/code-smells.html">code smell</a>; the way we&rsquo;ve arranged our model classes doesn&rsquo;t map clearly to the types of data we&rsquo;re reporting on. We&rsquo;ll need to look into nipping this naming confusion in the bud in the near future while Daily&rsquo;s code is still new and easily changeable&hellip;</p>
+
+<p>Up next week: saner model structure with the help of <a href="https://github.com/rails/activeresource">ActiveResource</a>? :&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Perl tidbit: array references.]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2013/01/31/perl-tidbit-array-references/"/>
+    <updated>2013-01-31T06:27:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2013/01/31/perl-tidbit-array-references</id>
+    <content type="html"><![CDATA[<p>It can be useful to know the difference between <code>\@a</code> and <code>[@a]</code> for an array <code>@a</code> with regard to array references. Take a look at the little script below:</p>
+
+<pre>
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my @a = (1,3,5);
+
+my $r1 = \@a;
+my $r2 = [@a];
+
+$r1->[0] = 'x';
+$r2->[1] = 'y';
+
+$\ = "\n";
+
+print $r1;
+print $r2;
+print join ',', @a;
+</pre>
+
+
+<p>which prints:</p>
+
+<pre>
+ARRAY(0x155ac98)
+ARRAY(0x155abf0)  # different from first
+x,3,5
+</pre>
+
+
+<p><code>\@a</code> gives you a reference to <code>@a</code>, which you can use to directly modify the array. <code>[@a]</code> creates a reference to a new array with the same content as <code>@a</code>, handy if you&rsquo;d like a &ldquo;copy&rdquo; of <code>@a</code> but do not wish to modify it through the reference.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Knowledge Sharing Push and Pull.]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2012/09/20/knowledge-sharing-push-and-pull/"/>
+    <updated>2012-09-20T05:34:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2012/09/20/knowledge-sharing-push-and-pull</id>
+    <content type="html"><![CDATA[<p>I often tell friends that I cannot listen to a book being read as an audiobook, but must read the words myself. I see this is pushing vs. pushing the book&rsquo;s content: listening is the audio player pushing the words to me; reading is me pulling the words at my own pace.</p>
+
+<p>Often the same is true for knowledge sharing. Within a creative work environment there is frequently the need to share knowledge about new code/systems/adopted techniques/whatever. I&rsquo;ve noticed that people often think that the push model is the most efficient way to get this new information across to the team. &ldquo;I&rsquo;ve give a quick presentation on the subject&rdquo;, but then get frustrated when a team member starts asking about the material covered a week later.</p>
+
+<p>I see this week-later asking as that person starting to pull. They need to actually work with this new thing, so their mind is attuned to learning about it. I&rsquo;d bet in most cases the person is in a much better state to really learn the new thing at that point.</p>
+
+<p>The initial push presentation (or email) gets the information out there. It highlights to everyone that if they need to do X, they can roughly do it in this way, or ask the presenter later. Don&rsquo;t be too frustrated if people begin to ask about stuff you already iterated during such a session. And maybe some accessible written documentation would provide a middle ground.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[tar]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2012/09/18/tar/"/>
+    <updated>2012-09-18T09:18:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2012/09/18/tar</id>
+    <content type="html"><![CDATA[<pre>[calum@calumlaptop ~]$ tar --help
+Usage: tar [OPTION...] [FILE]...
+GNU `tar' saves many files together into a single tape or disk archive, and can
+restore individual files from the archive.
+
+Examples:
+  tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.
+...
+...
+[ Huge amount of help stuff...]
+...
+...
+ Other options:
+
+  -?, --help                 give this help list
+      --restrict             disable use of some potentially harmful options
+      --usage                give a short usage message
+...
+</pre>
+
+
+<p>Aha! I fancy some of that &ldquo;short usage message&rdquo;&hellip;</p>
+
+<pre>
+[calum@calumlaptop ~]$ tar --usage
+Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
+            [-F NAME] [-L NUMBER] [-b BLOCKS] [-H FORMAT] [-V TEXT] [-I PROG]
+            [-C DIR] [-K MEMBER-NAME] [-N DATE-OR-FILE] [-T FILE] [-X FILE]
+            [--catenate] [--concatenate] [--create] [--diff] [--compare]
+            [--delete] [--append] [--list] [--test-label] [--update]
+            [--extract] [--get] [--check-device] [--listed-incremental=FILE]
+            [--incremental] [--ignore-failed-read] [--level=NUMBER] [--seek]
+            [--no-check-device] [--no-seek] [--occurrence[=NUMBER]]
+            [--sparse-version=MAJOR[.MINOR]] [--sparse] [--keep-old-files]
+            [--keep-newer-files] [--no-overwrite-dir] [--overwrite]
+            [--overwrite-dir] [--recursive-unlink] [--remove-files]
+            [--unlink-first] [--verify] [--ignore-command-error]
+            [--no-ignore-command-error] [--to-stdout] [--to-command=COMMAND]
+            [--atime-preserve[=METHOD]] [--delay-directory-restore]
+            [--group=NAME] [--mode=CHANGES] [--mtime=DATE-OR-FILE] [--touch]
+            [--no-delay-directory-restore] [--no-same-owner]
+            [--no-same-permissions] [--numeric-owner] [--owner=NAME]
+            [--preserve-permissions] [--same-permissions] [--preserve]
+            [--same-owner] [--preserve-order] [--same-order] [--file=ARCHIVE]
+            [--force-local] [--info-script=NAME] [--new-volume-script=NAME]
+            [--tape-length=NUMBER] [--multi-volume] [--rmt-command=COMMAND]
+            [--rsh-command=COMMAND] [--volno-file=FILE]
+            [--blocking-factor=BLOCKS] [--read-full-records] [--ignore-zeros]
+            [--record-size=NUMBER] [--format=FORMAT] [--old-archive]
+            [--portability]
+            [--pax-option=keyword[[:]=value][,keyword[[:]=value]]...] [--posix]
+            [--label=TEXT] [--auto-compress] [--use-compress-program=PROG]
+            [--bzip2] [--xz] [--lzip] [--lzma] [--lzop] [--no-auto-compress]
+            [--gzip] [--gunzip] [--ungzip] [--compress] [--uncompress]
+            [--add-file=FILE] [--backup[=CONTROL]] [--directory=DIR]
+            [--exclude=PATTERN] [--exclude-backups] [--exclude-caches]
+            [--exclude-caches-all] [--exclude-caches-under]
+            [--exclude-tag=FILE] [--exclude-tag-all=FILE]
+            [--exclude-tag-under=FILE] [--exclude-vcs] [--dereference]
+            [--hard-dereference] [--starting-file=MEMBER-NAME]
+            [--newer-mtime=DATE] [--no-null] [--no-recursion] [--no-unquote]
+            [--null] [--newer=DATE-OR-FILE] [--after-date=DATE-OR-FILE]
+            [--one-file-system] [--absolute-names] [--recursion]
+            [--suffix=STRING] [--files-from=FILE] [--unquote]
+            [--exclude-from=FILE] [--strip-components=NUMBER]
+            [--transform=EXPRESSION] [--xform=EXPRESSION] [--anchored]
+            [--ignore-case] [--no-anchored] [--no-ignore-case] [--no-wildcards]
+            [--no-wildcards-match-slash] [--wildcards]
+            [--wildcards-match-slash] [--checkpoint[=NUMBER]]
+            [--checkpoint-action=ACTION] [--full-time] [--index-file=FILE]
+            [--check-links] [--no-quote-chars=STRING] [--quote-chars=STRING]
+            [--quoting-style=STYLE] [--block-number] [--show-defaults]
+            [--show-omitted-dirs] [--show-transformed-names]
+            [--show-stored-names] [--totals[=SIGNAL]] [--utc] [--verbose]
+            [--warning=KEYWORD] [--interactive] [--confirmation] [--help]
+            [--restrict] [--usage] [--version] [FILE]...
+</pre>
+
+
+<p>Wow!</p>
+
+<p>[Just tar making my day :D]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Becoming a Polyglot Programmer.]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2012/07/29/becoming-a-polyglot-programmer/"/>
+    <updated>2012-07-29T08:42:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2012/07/29/becoming-a-polyglot-programmer</id>
+    <content type="html"><![CDATA[<p>[I&rsquo;m referring to being a programmer who is comfortable using several languages here, rather than a system built with several different programming languages.]</p>
+
+<p>I spend most of my time programming in only two languages: Perl and JavaScript. I often feel I&rsquo;d like to learn a few more, or at least sample a few more. I often find this hard to do however as step-by-step beginner tutorials don&rsquo;t rub off on me too well, and taking on a full side-project can be overkill when all you want to do is try out a language (I&rsquo;m slowing becoming more and more familiar with the Python universe because of one; not necessarily a bad thing!).</p>
+
+<p>But I&rsquo;ve recently discovered a way to try new languages which involves solving actual problems: <a href="http://projecteuler.net">projecteuler.net</a>. Project Euler contains many small yet challenging mathematical problems, in a form similar to many online coding contests (like Google CodeJam). You are given a problem, have to submit the answer, and are immediately told if you are correct. This is generally good for keeping your problem solving skills sharp, but the real benefit for me is that I can attempt to solve each problem with a different language! So that&rsquo;s what I&rsquo;m going to try&hellip;</p>
+
+<p>Why is this a good thing to do? Once you&rsquo;ve learned one or two decent general-purpose languages, why bother to know about others? Well, I see a few advantages:</p>
+
+<ul>
+<li>Becoming familiar with other languages can cause you to look at problems a little differently, and to look at the problems you solve with the language you are most familiar with a little differently also. You may find that a common approach used in a newly sampled language fits well with a problem you are tackling in your day job. A paradigm shift (<abbr title="Object Oriented">OO</abbr> &ndash;> functional or asynchronous event loops) may surprise you when you learn what is possible with altogether new ways of approaching problems.</li>
+<li>Maybe there&rsquo;s a language out there that&rsquo;s just right for you. The way the syntax and external resources have been designed seems to go well with your way of thinking, and maybe its community resonates well with your personality. Maybe you&rsquo;d be more productive using it. And maybe you&rsquo;ll never discover it.</li>
+<li>If you decide to learn a new stack by say writing a Rails app, you may find you don&rsquo;t do a lot of work with the underlying language. Your learning will lack a solid foundation, leaving you confused in places and with gaps in your understanding.</li>
+<li>When job offers come up you&rsquo;ll probably know something about the language the company is working with, and you&rsquo;ll have a base to continue to learn from (if you get the job that is!).</li>
+<li>It&rsquo;s just good fun!</li>
+</ul>
+
+
+<p>I&rsquo;ve just started this, and so far have solved four problems in three languages (Perl, Python, Ruby). I&rsquo;ll probably solve two or three problems before moving onto a fourth, and will deliberately make my programs reasonably well designed (by using OOP when available, passing arguments via the command line rather than hard-coding them) in an attempt to get more exposure to each language.</p>
+
+<p>I tend to find I actually learn something when I do things this way. When I have a problem to solve, I go out and look for the syntax necessary to implement my algorithm. When I&rsquo;ve completed a problem, I plan to go off and read over the documentation of the language I used. I find that once I have a reference point (the work I just did solving the problem) I can take in the documentation much more easily. If I really liked the language, I could then decide to learn further by taking on a side-project (e.g. if I liked Ruby perhaps I could build a Rails web-app).</p>
+
+<p>Hopefully in a few months time I&rsquo;ll be familiar with quite a few new programming languages, and maybe you will be too!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Equality Check.]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2012/05/09/equality-check/"/>
+    <updated>2012-05-09T05:45:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2012/05/09/equality-check</id>
+    <content type="html"><![CDATA[<pre>
+if (' ABCD ' =~ / $c /) {
+</pre>
+
+
+<p>Witnessed by me today in some code I was refactoring.</p>
+
+<p>[String changed to &ldquo;ABCD&rdquo; to hide any relation with the project in question.]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Instead of 'quitting' Facebook.]]></title>
+    <link href="http://calumhalcrow.github.io/blog/2012/01/09/instead-of-quitting-facebook/"/>
+    <updated>2012-01-09T08:49:00+00:00</updated>
+    <id>http://calumhalcrow.github.io/blog/2012/01/09/instead-of-quitting-facebook</id>
+    <content type="html"><![CDATA[<p>&hellip;just cut out a lot of the noise. Try taking the following steps:</p>
+
+<ul>
+<li>Unsubscribe from friends who get on your nerves.</li>
+<li>Turn off notifications from any groups you like to be part of, but update often causing constant notifications.</li>
+<li>Subscribe to &ldquo;important updates only&rdquo; from friends who you like to hear from but are a bit too chatty.</li>
+<li>Block anything &ldquo;from Twitter&rdquo;.</li>
+<li>Generally block/unsubscribe from any Group/Page that you like, but you don&rsquo;t need to hear from day to day.</li>
+</ul>
+
+
+<p>Suddenly your feed will be very quiet, and you&rsquo;ll find checking it once in a while will be a small pleasure rather than a constant catch-up reviewing posts that generally get on your nerves.</p>
 ]]></content>
   </entry>
   

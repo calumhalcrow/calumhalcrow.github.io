@@ -1,0 +1,190 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Yes we can, yes we cancan. | Calum Halcrow</title>
+
+<meta name="author" content="Calum Halcrow"> 
+
+<meta name="description" content="cancan is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Calum Halcrow" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Calum Halcrow</a></h1>
+<nav id="main-nav"><ul>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/projects">Projects</a></li>
+	<li><a href="http://github.com/calumhalcrow">Github</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/blog">Blog</a></li>
+	<li><a href="/projects">Projects</a></li>
+	<li><a href="http://github.com/calumhalcrow">Github</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:calumhalcrow.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Yes We Can, Yes We Cancan.</h2>
+	<div class="entry-content"><p><a href="https://github.com/ryanb/cancan">cancan</a> is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to your users.</p>
+
+<p>You can get it working on your app by following the instructions on its <a href="https://github.com/ryanb/cancan#installation">Github page</a>.</p>
+
+<p>cancan allows you to work with two concepts: roles and abilities. A role is a classification that you give to a set of your users, an ability is something users with that role can do.</p>
+
+<p>At Mindvalley we use cancan in a few of our apps. I&rsquo;m currently working on the next version of Daily, our internal reporting service, and we recently realized that we needed to restrict certain types of users from accessing certain reports. cancan to the rescue!</p>
+
+<p>Daily users fall into three distinct roles: managers, marketers and admins. Marketers will not be able to view certain high-level business reports. Admins on the other hand will be able to access everything and be able to change the role of any user.</p>
+
+<p>The way in which you define and assign roles to your users is left up to you. cancan does not provide functionality of that nature. It&rsquo;s useful however to be able to ask a user instance if it belongs to a particular role (if user.marketer?). This is what we have implemented on Daily.</p>
+
+<p>Once you can ask such questions, you use cancan&rsquo;s Ability class to define abilities for each user role. On Daily we have something like:</p>
+
+<pre>
+    if user.admin?
+      can :manage, :all
+    elsif user.manager?
+      can :manage, :all
+      cannot :update, User
+    elsif user.marketer?
+      can :manage, :all
+      cannot :update, User
+      cannot :bundles_report, ProductLinesClient
+    end
+</pre>
+
+
+
+
+<p><p>This is (almost) understandable just by reading the code out load. &ldquo;Admins can manage everything.&rdquo; &ldquo;Managers can manage everything but they cannot update users&rdquo;. You may be wondering why I&rsquo;ve repeated &ldquo;can :manage, :all&rdquo; three times here. Surely that&rsquo;s not very <abbr title="Don't Repeat Yourself">DRY</abbr>. Well, I feel it reads more naturally this way, and doesn&rsquo;t allow for a user with a rogue role to slip into the system and have access to everything (prizes up for grabs for better solutions though; just send me a pull request ;&ndash;).</p>
+
+<p>The reason I said this is &ldquo;almost&rdquo; readable is because of the last &ldquo;cannot&rdquo; statement. &ldquo;Marketers cannot bundles-report a product-lines-client.&rdquo; What is that supposed to mean?? Well, technically this relates back to the specific method &ldquo;bundles_report&rdquo; on the &ldquo;ProductLinesClient&rdquo; class that returns the report that marketers are not allowed to access. But this unclear naming suggests a <a href="http://www.codinghorror.com/blog/2006/05/code-smells.html">code smell</a>; the way we&rsquo;ve arranged our model classes doesn&rsquo;t map clearly to the types of data we&rsquo;re reporting on. We&rsquo;ll need to look into nipping this naming confusion in the bud in the near future while Daily&rsquo;s code is still new and easily changeable&hellip;</p>
+
+<p>Up next week: saner model structure with the help of <a href="https://github.com/rails/activeresource">ActiveResource</a>? :&ndash;)</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T08:22:00+00:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time></div>
+	
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Calum Halcrow
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>
