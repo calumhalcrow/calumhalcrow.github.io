@@ -50,13 +50,13 @@ This is my wife's business website. She is an English Trainer, based in the Klan
 
 Tech stack: [WordPress][13], [DreamHost][14], [HTML5][15], [CSS3][16].
 
-### [Campr](http://campr.calumhalcrow.com)
+### [Campr](https://github.com/calumhalcrow/campr)
 
 Campr is a webapp that facilitates networking at events. It allows you to see everyone who is at the event you are attending, along with a little bit of information about each person. Based on this, you can single out people you may want to get to know better. The project was started at [Hack Weekend](http://hack.weekend.my), a delightful hackathon series that takes place every quarter in Kuala Lumpur. Working on Campr was a great learning experience, but we've ceased development on the project.
 
 Tech stack: [Python][17], [Django][18], [Tornado][19], [SocketIO][20], [RabbitMQ][21], [SQLite][22], [Heroku][23].
 
-### [WebCamp KL](http://webcamp.my)
+### [WebCamp KL](https://www.facebook.com/webcampkl)
 
 WebCamp is a monthly meet-up of web professionals based in and around Kuala Lumpur. I am a fairly active member of the community, and have helped in minor ways to organise some of the group's events.
 
