@@ -11,7 +11,7 @@ article{
 	}
 	h2.title{
 		font-size: 36px;
-		font-weight: 300;
+		font-weight: 100;
 		line-height: 1;
 		margin-bottom: 20px;
 		margin-left:0px;
@@ -69,7 +69,7 @@ article{
 			}
 			
 		}
-		p, blockquote, ul, ol, dl, table, iframe, h1, h2, h3, h4, h5, h6, .video-container{
+		p, blockquote, ul, ol, dl, table, iframe, h1, h3, h4, h5, h6, .video-container{
 			margin-top: 1.5em;
 			margin-bottom: 1.5em;
 		}
@@ -89,9 +89,10 @@ article{
 			margin-top: 10px;	
 		}
 		h2{
-			font-weight: 300;
+			font-weight: 100;
 			border-bottom: 1px solid $color-gray04;
 			position: relative;
+      margin: 0;
 			&:before{
 				content: "";
 				position: absolute;
