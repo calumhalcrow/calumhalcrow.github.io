@@ -1,0 +1,88 @@
+---
+layout: post
+title: "tar"
+date: 2012-09-18 09:18
+comments: true
+categories: 
+---
+
+<pre>[calum@calumlaptop ~]$ tar --help
+Usage: tar [OPTION...] [FILE]...
+GNU `tar' saves many files together into a single tape or disk archive, and can
+restore individual files from the archive.
+
+Examples:
+  tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.
+...
+...
+[ Huge amount of help stuff...]
+...
+...
+ Other options:
+
+  -?, --help                 give this help list
+      --restrict             disable use of some potentially harmful options
+      --usage                give a short usage message
+...
+</pre>
+
+Aha! I fancy some of that "short usage message"...
+
+<pre>
+[calum@calumlaptop ~]$ tar --usage
+Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
+            [-F NAME] [-L NUMBER] [-b BLOCKS] [-H FORMAT] [-V TEXT] [-I PROG]
+            [-C DIR] [-K MEMBER-NAME] [-N DATE-OR-FILE] [-T FILE] [-X FILE]
+            [--catenate] [--concatenate] [--create] [--diff] [--compare]
+            [--delete] [--append] [--list] [--test-label] [--update]
+            [--extract] [--get] [--check-device] [--listed-incremental=FILE]
+            [--incremental] [--ignore-failed-read] [--level=NUMBER] [--seek]
+            [--no-check-device] [--no-seek] [--occurrence[=NUMBER]]
+            [--sparse-version=MAJOR[.MINOR]] [--sparse] [--keep-old-files]
+            [--keep-newer-files] [--no-overwrite-dir] [--overwrite]
+            [--overwrite-dir] [--recursive-unlink] [--remove-files]
+            [--unlink-first] [--verify] [--ignore-command-error]
+            [--no-ignore-command-error] [--to-stdout] [--to-command=COMMAND]
+            [--atime-preserve[=METHOD]] [--delay-directory-restore]
+            [--group=NAME] [--mode=CHANGES] [--mtime=DATE-OR-FILE] [--touch]
+            [--no-delay-directory-restore] [--no-same-owner]
+            [--no-same-permissions] [--numeric-owner] [--owner=NAME]
+            [--preserve-permissions] [--same-permissions] [--preserve]
+            [--same-owner] [--preserve-order] [--same-order] [--file=ARCHIVE]
+            [--force-local] [--info-script=NAME] [--new-volume-script=NAME]
+            [--tape-length=NUMBER] [--multi-volume] [--rmt-command=COMMAND]
+            [--rsh-command=COMMAND] [--volno-file=FILE]
+            [--blocking-factor=BLOCKS] [--read-full-records] [--ignore-zeros]
+            [--record-size=NUMBER] [--format=FORMAT] [--old-archive]
+            [--portability]
+            [--pax-option=keyword[[:]=value][,keyword[[:]=value]]...] [--posix]
+            [--label=TEXT] [--auto-compress] [--use-compress-program=PROG]
+            [--bzip2] [--xz] [--lzip] [--lzma] [--lzop] [--no-auto-compress]
+            [--gzip] [--gunzip] [--ungzip] [--compress] [--uncompress]
+            [--add-file=FILE] [--backup[=CONTROL]] [--directory=DIR]
+            [--exclude=PATTERN] [--exclude-backups] [--exclude-caches]
+            [--exclude-caches-all] [--exclude-caches-under]
+            [--exclude-tag=FILE] [--exclude-tag-all=FILE]
+            [--exclude-tag-under=FILE] [--exclude-vcs] [--dereference]
+            [--hard-dereference] [--starting-file=MEMBER-NAME]
+            [--newer-mtime=DATE] [--no-null] [--no-recursion] [--no-unquote]
+            [--null] [--newer=DATE-OR-FILE] [--after-date=DATE-OR-FILE]
+            [--one-file-system] [--absolute-names] [--recursion]
+            [--suffix=STRING] [--files-from=FILE] [--unquote]
+            [--exclude-from=FILE] [--strip-components=NUMBER]
+            [--transform=EXPRESSION] [--xform=EXPRESSION] [--anchored]
+            [--ignore-case] [--no-anchored] [--no-ignore-case] [--no-wildcards]
+            [--no-wildcards-match-slash] [--wildcards]
+            [--wildcards-match-slash] [--checkpoint[=NUMBER]]
+            [--checkpoint-action=ACTION] [--full-time] [--index-file=FILE]
+            [--check-links] [--no-quote-chars=STRING] [--quote-chars=STRING]
+            [--quoting-style=STYLE] [--block-number] [--show-defaults]
+            [--show-omitted-dirs] [--show-transformed-names]
+            [--show-stored-names] [--totals[=SIGNAL]] [--utc] [--verbose]
+            [--warning=KEYWORD] [--interactive] [--confirmation] [--help]
+            [--restrict] [--usage] [--version] [FILE]...
+</pre>
+
+Wow!
+
+[Just tar making my day :D]
