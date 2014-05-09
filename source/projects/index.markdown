@@ -13,7 +13,7 @@ Here's a run-down of some of the projects I've been involved in. The "Tech stack
 
 ### [Mindvalley](http://mindvalley.com)
 
-I currently work for Mindvalley, developing web-apps that support their core business. Because Mindvalley market and sell wellness products, their portfolio of internal apps include: sophisticated campaign tracking services, an e-commerce platform, <abbr title="Email Service Provider">ESP</abbr> integrations and more. Customer-facing platforms are also coming to the fore at Mindvalley. From our recently launched [Academy](http://mindvalleyacademy.com) to [Omvana](http://www.omvana.com), our first venture into mobile, there's plenty going on.
+Up until April 2014 I worked at Mindvalley, developing web-apps that supported their core business. Because Mindvalley market and sell wellness products, their portfolio of internal apps include: sophisticated campaign tracking services, an e-commerce platform, <abbr title="Email Service Provider">ESP</abbr> integrations and more, all of which I helped develop.
 
 Tech stack: [Ruby][33], [Rails][32], [RSpec][29], [Capistrano][35], [PostGreSQL][4], [MongoDB][36], [Linode][37]
 
