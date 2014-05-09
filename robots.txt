@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://calumhalcrow.github.io/sitemap.xml 
+Sitemap: http://calumhalcrow.com/sitemap.xml 

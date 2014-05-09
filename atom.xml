@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Calum Halcrow]]></title>
-  <link href="http://calumhalcrow.github.io/atom.xml" rel="self"/>
-  <link href="http://calumhalcrow.github.io/"/>
-  <updated>2014-02-09T13:23:45+00:00</updated>
-  <id>http://calumhalcrow.github.io/</id>
+  <link href="http://calumhalcrow.com/atom.xml" rel="self"/>
+  <link href="http://calumhalcrow.com/"/>
+  <updated>2014-05-09T17:03:34+01:00</updated>
+  <id>http://calumhalcrow.com/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[New Blogging Setup]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2014/01/26/new-blogging-setup/"/>
+    <link href="http://calumhalcrow.com/blog/2014/01/26/new-blogging-setup/"/>
     <updated>2014-01-26T04:14:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2014/01/26/new-blogging-setup</id>
+    <id>http://calumhalcrow.com/blog/2014/01/26/new-blogging-setup</id>
     <content type="html"><![CDATA[<p>Part of my forward looking plans have been to migrate <a href="http://calumhalcrow.com">calumhalcrow.com</a>
 onto a static blogging platform, therefore having more control over the code that drives it.</p>
 
@@ -31,9 +31,9 @@ with full control over my site yet with almost embarrassingly minimal setup work
   
   <entry>
     <title type="html"><![CDATA[Yes we can, yes we cancan.]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2013/09/27/yes-we-can/"/>
-    <updated>2013-09-27T08:22:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2013/09/27/yes-we-can</id>
+    <link href="http://calumhalcrow.com/blog/2013/09/27/yes-we-can/"/>
+    <updated>2013-09-27T08:22:00+01:00</updated>
+    <id>http://calumhalcrow.com/blog/2013/09/27/yes-we-can</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/ryanb/cancan">cancan</a> is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to your users.</p>
 
 <p>You can get it working on your app by following the instructions on its <a href="https://github.com/ryanb/cancan#installation">Github page</a>.</p>
@@ -74,9 +74,9 @@ with full control over my site yet with almost embarrassingly minimal setup work
   
   <entry>
     <title type="html"><![CDATA[Perl tidbit: array references.]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2013/01/31/perl-tidbit-array-references/"/>
+    <link href="http://calumhalcrow.com/blog/2013/01/31/perl-tidbit-array-references/"/>
     <updated>2013-01-31T06:27:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2013/01/31/perl-tidbit-array-references</id>
+    <id>http://calumhalcrow.com/blog/2013/01/31/perl-tidbit-array-references</id>
     <content type="html"><![CDATA[<p>It can be useful to know the difference between <code>\@a</code> and <code>[@a]</code> for an array <code>@a</code> with regard to array references. Take a look at the little script below:</p>
 
 <pre>
@@ -115,9 +115,9 @@ x,3,5
   
   <entry>
     <title type="html"><![CDATA[Knowledge Sharing Push and Pull.]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2012/09/20/knowledge-sharing-push-and-pull/"/>
-    <updated>2012-09-20T05:34:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2012/09/20/knowledge-sharing-push-and-pull</id>
+    <link href="http://calumhalcrow.com/blog/2012/09/20/knowledge-sharing-push-and-pull/"/>
+    <updated>2012-09-20T05:34:00+01:00</updated>
+    <id>http://calumhalcrow.com/blog/2012/09/20/knowledge-sharing-push-and-pull</id>
     <content type="html"><![CDATA[<p>I often tell friends that I cannot listen to a book being read as an audiobook, but must read the words myself. I see this is pushing vs. pushing the book&rsquo;s content: listening is the audio player pushing the words to me; reading is me pulling the words at my own pace.</p>
 
 <p>Often the same is true for knowledge sharing. Within a creative work environment there is frequently the need to share knowledge about new code/systems/adopted techniques/whatever. I&rsquo;ve noticed that people often think that the push model is the most efficient way to get this new information across to the team. &ldquo;I&rsquo;ve give a quick presentation on the subject&rdquo;, but then get frustrated when a team member starts asking about the material covered a week later.</p>
@@ -130,9 +130,9 @@ x,3,5
   
   <entry>
     <title type="html"><![CDATA[tar]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2012/09/18/tar/"/>
-    <updated>2012-09-18T09:18:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2012/09/18/tar</id>
+    <link href="http://calumhalcrow.com/blog/2012/09/18/tar/"/>
+    <updated>2012-09-18T09:18:00+01:00</updated>
+    <id>http://calumhalcrow.com/blog/2012/09/18/tar</id>
     <content type="html"><![CDATA[<pre>[calum@calumlaptop ~]$ tar --help
 Usage: tar [OPTION...] [FILE]...
 GNU `tar' saves many files together into a single tape or disk archive, and can
@@ -220,9 +220,9 @@ Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
   
   <entry>
     <title type="html"><![CDATA[Becoming a Polyglot Programmer.]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2012/07/29/becoming-a-polyglot-programmer/"/>
-    <updated>2012-07-29T08:42:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2012/07/29/becoming-a-polyglot-programmer</id>
+    <link href="http://calumhalcrow.com/blog/2012/07/29/becoming-a-polyglot-programmer/"/>
+    <updated>2012-07-29T08:42:00+01:00</updated>
+    <id>http://calumhalcrow.com/blog/2012/07/29/becoming-a-polyglot-programmer</id>
     <content type="html"><![CDATA[<p>[I&rsquo;m referring to being a programmer who is comfortable using several languages here, rather than a system built with several different programming languages.]</p>
 
 <p>I spend most of my time programming in only two languages: Perl and JavaScript. I often feel I&rsquo;d like to learn a few more, or at least sample a few more. I often find this hard to do however as step-by-step beginner tutorials don&rsquo;t rub off on me too well, and taking on a full side-project can be overkill when all you want to do is try out a language (I&rsquo;m slowing becoming more and more familiar with the Python universe because of one; not necessarily a bad thing!).</p>
@@ -250,9 +250,9 @@ Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
   
   <entry>
     <title type="html"><![CDATA[Equality Check.]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2012/05/09/equality-check/"/>
-    <updated>2012-05-09T05:45:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2012/05/09/equality-check</id>
+    <link href="http://calumhalcrow.com/blog/2012/05/09/equality-check/"/>
+    <updated>2012-05-09T05:45:00+01:00</updated>
+    <id>http://calumhalcrow.com/blog/2012/05/09/equality-check</id>
     <content type="html"><![CDATA[<pre>
 if (' ABCD ' =~ / $c /) {
 </pre>
@@ -266,9 +266,9 @@ if (' ABCD ' =~ / $c /) {
   
   <entry>
     <title type="html"><![CDATA[Instead of 'quitting' Facebook.]]></title>
-    <link href="http://calumhalcrow.github.io/blog/2012/01/09/instead-of-quitting-facebook/"/>
+    <link href="http://calumhalcrow.com/blog/2012/01/09/instead-of-quitting-facebook/"/>
     <updated>2012-01-09T08:49:00+00:00</updated>
-    <id>http://calumhalcrow.github.io/blog/2012/01/09/instead-of-quitting-facebook</id>
+    <id>http://calumhalcrow.com/blog/2012/01/09/instead-of-quitting-facebook</id>
     <content type="html"><![CDATA[<p>&hellip;just cut out a lot of the noise. Try taking the following steps:</p>
 
 <ul>
