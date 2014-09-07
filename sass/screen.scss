@@ -1,7 +1,7 @@
 @import "compass";
-
-@import "custom/color";
-
-@import "base";
-@import "parts";
-@import "plugins";
+@import "plugins/pure/0.5.0/pure-min.scss";
+@import "plugins/pure/0.5.0/grids-responsive-min.scss";
+@import "base/layout";
+@import "base/solarized";
+@import "base/utilities";
+@import "partials/syntax";

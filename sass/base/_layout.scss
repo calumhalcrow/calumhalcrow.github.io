@@ -1,78 +1,189 @@
-$max-width: 780px;
+$link-color: #63aabc;
+$nav-hover-color: rgb(223, 223, 223);
 
-*{
-	margin: 0;
-	padding: 0;
-}
-body{
-	font-family:"Roboto Slab","PT Serif",Georgia,Times,"Times New Roman",serif,"Roboto Slab","PT Serif",Georgia,Times,"Times New Roman",serif,"PT Serif","Georgia","Helvetica Neue",Arial,sans-serif;
-	font-size: 17px;
-	font-weight: 400;
-	line-height: 1.7;
-	background: $color-background;
-    color: $color-gray01;
-	@media screen and (max-width: 800px){
-		margin: 0 20px;
-	}
-	@media screen and (max-width: 600px){
-		font-size: 13px;
-		margin: 0 20px;
-	}
+$noise-bg: image-url('noise.png') top left !default;
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
+.mono { font-family: $mono; }
+$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
+.sans { font-family: $sans; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h1{
-	font-size: 36px;
-}
-h2{
-	font-size: 36px;
-	line-height:1;
-  font-weight:300;
-}
-h3{
-	
-	font-size: 20px;
-	line-height: 1.2;
-	margin: 1.5em 0;
-	font-weight: normal;
-	display: block;
-	@media screen and (max-width: 620px) {
-	font-size: 15px;
-		}
-	}
 a {
- 	text-decoration:none;
-	color:#bf0222;
-	-webkit-transition:border .25s linear;
-	-moz-transition:border .25s linear;
-	-ms-transition:border .25s linear;
-	transition:border .25s linear;
-	outline:none;
+  text-decoration: none;
+  color: $link-color;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
 
-a:hover {
-	border-bottom:1px solid #bf0222;
+h3 {
+  font-weight: 100;
 }
 
-.alignleft{
-	float: left;
-}
-.alignright{
-	float: right;
-}
-.clearfix{
-	@include pie-clearfix;
-}
-.inner{
-	width: $max-width;
-	margin: 0 auto;
-	@media screen and (max-width: 800px){
-		width: 100%;
-	}
+/* LAYOUT CSS */
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
 }
 
-#content {
-  img {
-    float: left;
-    margin: 5px 15px 15px 0;
+#layout {
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  top: auto;
+  margin: 3em auto;
+}
+
+.sidebar {
+  background: url('/images/bg.jpg') 50% 50%;
+  background-size: cover;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+}
+
+.brand-title,
+.brand-tagline {
+  margin: 0;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+.brand-title {
+  text-transform: uppercase;
+}
+.brand-tagline {
+  font-weight: 300;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-item {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.nav-item a {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  margin-top: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+  border: 2px solid $nav-hover-color;
+  text-decoration: none;
+}
+
+.content-subhead {
+  text-transform: uppercase;
+  color: #aaa;
+  border-bottom: 1px solid #eee;
+  padding: 0.4em 0;
+  font-size: 80%;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.content {
+  padding: 2em 1em 0;
+}
+
+.post {
+  padding-bottom: 2em;
+}
+.post-title {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 0.2em;
+}
+.post-avatar {
+  border-radius: 50px;
+  float: right;
+  margin-left: 1em;
+}
+.post-description {
+  font-family: Georgia, "Cambria", serif;
+  color: #444;
+  line-height: 1.8em;
+}
+.post-meta {
+  color: #999;
+  font-size: 90%;
+  margin: 0;
+}
+
+.post-category {
+  margin: 0 0.1em;
+  padding: 0.3em 1em;
+  color: white;
+  background: #999;
+  font-size: 80%;
+}
+.post-category-design {
+  background: #5aba59;
+}
+.post-category-pure {
+  background: #4d85d1;
+}
+.post-category-yui {
+  background: #8156a7;
+}
+.post-category-js {
+  background: #df2d4f;
+}
+
+.post-images {
+  margin: 1em 0;
+}
+.post-image-meta {
+  margin-top: -3.5em;
+  margin-left: 1em;
+  color: white;
+  text-shadow: 0 1px 1px #333;
+}
+
+.footer {
+  text-align: center;
+  padding: 1em 0;
+}
+.footer a {
+  color: #ccc;
+  font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+  background: none;
+}
+
+@media (min-width: 48em) {
+  .content {
+    padding: 2em 3em 0;
+    margin-left: 25%;
+  }
+
+  .header {
+    margin: 80% 2em 0;
+    text-align: right;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
   }
 }
