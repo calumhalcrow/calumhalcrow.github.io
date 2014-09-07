@@ -4,7 +4,7 @@
   <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.com/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.com/"/>
-  <updated>2014-05-09T17:07:56+01:00</updated>
+  <updated>2014-09-07T12:25:56+08:00</updated>
   <id>http://calumhalcrow.com/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
@@ -16,10 +16,13 @@
   <entry>
     <title type="html"><![CDATA[New Blogging Setup]]></title>
     <link href="http://calumhalcrow.com/blog/2014/01/26/new-blogging-setup/"/>
-    <updated>2014-01-26T04:14:00+00:00</updated>
+    <updated>2014-01-26T04:14:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2014/01/26/new-blogging-setup</id>
     <content type="html"><![CDATA[<p>Part of my forward looking plans have been to migrate <a href="http://calumhalcrow.com">calumhalcrow.com</a>
 onto a static blogging platform, therefore having more control over the code that drives it.</p>
+
+<!-- more -->
+
 
 <p>I decided to use <a href="http://octopress.org">Octopress</a> (with the <a href="https://github.com/macjasp/cleanpress">CleanPress</a> theme)
 hosted on <a href="http://pages.github.com">Github Pages</a>. Such a setup gives me a static blogging engine, hosted for free,
@@ -32,9 +35,12 @@ with full control over my site yet with almost embarrassingly minimal setup work
   <entry>
     <title type="html"><![CDATA[Yes we can, yes we cancan.]]></title>
     <link href="http://calumhalcrow.com/blog/2013/09/27/yes-we-can/"/>
-    <updated>2013-09-27T08:22:00+01:00</updated>
+    <updated>2013-09-27T08:22:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2013/09/27/yes-we-can</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/ryanb/cancan">cancan</a> is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to your users.</p>
+
+<!-- more -->
+
 
 <p>You can get it working on your app by following the instructions on its <a href="https://github.com/ryanb/cancan#installation">Github page</a>.</p>
 
@@ -48,18 +54,27 @@ with full control over my site yet with almost embarrassingly minimal setup work
 
 <p>Once you can ask such questions, you use cancan&rsquo;s Ability class to define abilities for each user role. On Daily we have something like:</p>
 
-<pre>
-    if user.admin?
-      can :manage, :all
-    elsif user.manager?
-      can :manage, :all
-      cannot :update, User
-    elsif user.marketer?
-      can :manage, :all
-      cannot :update, User
-      cannot :bundles_report, ProductLinesClient
-    end
-</pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">admin?</span>
+</span><span class='line'>  <span class="n">can</span> <span class="ss">:manage</span><span class="p">,</span> <span class="ss">:all</span>
+</span><span class='line'><span class="k">elsif</span> <span class="n">user</span><span class="o">.</span><span class="n">manager?</span>
+</span><span class='line'>  <span class="n">can</span> <span class="ss">:manage</span><span class="p">,</span> <span class="ss">:all</span>
+</span><span class='line'>  <span class="n">cannot</span> <span class="ss">:update</span><span class="p">,</span> <span class="no">User</span>
+</span><span class='line'><span class="k">elsif</span> <span class="n">user</span><span class="o">.</span><span class="n">marketer?</span>
+</span><span class='line'>  <span class="n">can</span> <span class="ss">:manage</span><span class="p">,</span> <span class="ss">:all</span>
+</span><span class='line'>  <span class="n">cannot</span> <span class="ss">:update</span><span class="p">,</span> <span class="no">User</span>
+</span><span class='line'>  <span class="n">cannot</span> <span class="ss">:bundles_report</span><span class="p">,</span> <span class="no">ProductLinesClient</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 
@@ -75,38 +90,61 @@ with full control over my site yet with almost embarrassingly minimal setup work
   <entry>
     <title type="html"><![CDATA[Perl tidbit: array references.]]></title>
     <link href="http://calumhalcrow.com/blog/2013/01/31/perl-tidbit-array-references/"/>
-    <updated>2013-01-31T06:27:00+00:00</updated>
+    <updated>2013-01-31T06:27:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2013/01/31/perl-tidbit-array-references</id>
     <content type="html"><![CDATA[<p>It can be useful to know the difference between <code>\@a</code> and <code>[@a]</code> for an array <code>@a</code> with regard to array references. Take a look at the little script below:</p>
 
-<pre>
-#!/usr/bin/perl
-use strict;
-use warnings;
+<!-- more -->
 
-my @a = (1,3,5);
 
-my $r1 = \@a;
-my $r2 = [@a];
 
-$r1->[0] = 'x';
-$r2->[1] = 'y';
 
-$\ = "\n";
-
-print $r1;
-print $r2;
-print join ',', @a;
-</pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1">#!/usr/bin/perl</span>
+</span><span class='line'><span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+</span><span class='line'><span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">my</span> <span class="nv">@a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">my</span> <span class="nv">$r1</span> <span class="o">=</span> <span class="o">\</span><span class="nv">@a</span><span class="p">;</span>
+</span><span class='line'><span class="k">my</span> <span class="nv">$r2</span> <span class="o">=</span> <span class="p">[</span><span class="nv">@a</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$r1</span><span class="o">-&gt;</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;x&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$r2</span><span class="o">-&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;y&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="vg">$\</span> <span class="o">=</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="nv">$r1</span><span class="p">;</span>
+</span><span class='line'><span class="k">print</span> <span class="nv">$r2</span><span class="p">;</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">join</span> <span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="nv">@a</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>which prints:</p>
 
-<pre>
-ARRAY(0x155ac98)
-ARRAY(0x155abf0)  # different from first
-x,3,5
-</pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="n">ARRAY</span><span class="p">(</span><span class="mh">0x155ac98</span><span class="p">)</span>
+</span><span class='line'><span class="n">ARRAY</span><span class="p">(</span><span class="mh">0x155abf0</span><span class="p">)</span>  <span class="c1"># different from first</span>
+</span><span class='line'><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p><code>\@a</code> gives you a reference to <code>@a</code>, which you can use to directly modify the array. <code>[@a]</code> creates a reference to a new array with the same content as <code>@a</code>, handy if you&rsquo;d like a &ldquo;copy&rdquo; of <code>@a</code> but do not wish to modify it through the reference.</p>
@@ -116,9 +154,12 @@ x,3,5
   <entry>
     <title type="html"><![CDATA[Knowledge Sharing Push and Pull.]]></title>
     <link href="http://calumhalcrow.com/blog/2012/09/20/knowledge-sharing-push-and-pull/"/>
-    <updated>2012-09-20T05:34:00+01:00</updated>
+    <updated>2012-09-20T05:34:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/09/20/knowledge-sharing-push-and-pull</id>
     <content type="html"><![CDATA[<p>I often tell friends that I cannot listen to a book being read as an audiobook, but must read the words myself. I see this is pushing vs. pushing the book&rsquo;s content: listening is the audio player pushing the words to me; reading is me pulling the words at my own pace.</p>
+
+<!-- more -->
+
 
 <p>Often the same is true for knowledge sharing. Within a creative work environment there is frequently the need to share knowledge about new code/systems/adopted techniques/whatever. I&rsquo;ve noticed that people often think that the push model is the most efficient way to get this new information across to the team. &ldquo;I&rsquo;ve give a quick presentation on the subject&rdquo;, but then get frustrated when a team member starts asking about the material covered a week later.</p>
 
@@ -131,85 +172,159 @@ x,3,5
   <entry>
     <title type="html"><![CDATA[tar]]></title>
     <link href="http://calumhalcrow.com/blog/2012/09/18/tar/"/>
-    <updated>2012-09-18T09:18:00+01:00</updated>
+    <updated>2012-09-18T09:18:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/09/18/tar</id>
-    <content type="html"><![CDATA[<pre>[calum@calumlaptop ~]$ tar --help
-Usage: tar [OPTION...] [FILE]...
-GNU `tar' saves many files together into a single tape or disk archive, and can
-restore individual files from the archive.
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>calum@calumlaptop ~<span class="o">]</span><span class="nv">$ </span>tar --help
+</span><span class='line'>Usage: tar <span class="o">[</span>OPTION...<span class="o">]</span> <span class="o">[</span>FILE<span class="o">]</span>...
+</span><span class='line'>GNU <span class="sb">`</span>tar<span class="err">&#39;</span> saves many files together into a single tape or disk archive, and can
+</span><span class='line'>restore individual files from the archive.
+</span><span class='line'>
+</span><span class='line'>Examples:
+</span><span class='line'>  tar -cf archive.tar foo bar  <span class="c"># Create archive.tar from files foo and bar.</span>
+</span><span class='line'>...
+</span><span class='line'>...
+</span><span class='line'><span class="o">[</span> Huge amount of <span class="nb">help </span>stuff...<span class="o">]</span>
+</span><span class='line'>...
+</span><span class='line'>...
+</span><span class='line'> Other options:
+</span><span class='line'>
+</span><span class='line'>  -?, --help                 give this <span class="nb">help </span>list
+</span><span class='line'>      --restrict             disable use of some potentially harmful options
+</span><span class='line'>      --usage                give a short usage message
+</span><span class='line'>...
+</span></code></pre></td></tr></table></div></figure>
 
-Examples:
-  tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.
-...
-...
-[ Huge amount of help stuff...]
-...
-...
- Other options:
 
-  -?, --help                 give this help list
-      --restrict             disable use of some potentially harmful options
-      --usage                give a short usage message
-...
-</pre>
+
+
+<!-- more -->
 
 
 <p>Aha! I fancy some of that &ldquo;short usage message&rdquo;&hellip;</p>
 
-<pre>
-[calum@calumlaptop ~]$ tar --usage
-Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
-            [-F NAME] [-L NUMBER] [-b BLOCKS] [-H FORMAT] [-V TEXT] [-I PROG]
-            [-C DIR] [-K MEMBER-NAME] [-N DATE-OR-FILE] [-T FILE] [-X FILE]
-            [--catenate] [--concatenate] [--create] [--diff] [--compare]
-            [--delete] [--append] [--list] [--test-label] [--update]
-            [--extract] [--get] [--check-device] [--listed-incremental=FILE]
-            [--incremental] [--ignore-failed-read] [--level=NUMBER] [--seek]
-            [--no-check-device] [--no-seek] [--occurrence[=NUMBER]]
-            [--sparse-version=MAJOR[.MINOR]] [--sparse] [--keep-old-files]
-            [--keep-newer-files] [--no-overwrite-dir] [--overwrite]
-            [--overwrite-dir] [--recursive-unlink] [--remove-files]
-            [--unlink-first] [--verify] [--ignore-command-error]
-            [--no-ignore-command-error] [--to-stdout] [--to-command=COMMAND]
-            [--atime-preserve[=METHOD]] [--delay-directory-restore]
-            [--group=NAME] [--mode=CHANGES] [--mtime=DATE-OR-FILE] [--touch]
-            [--no-delay-directory-restore] [--no-same-owner]
-            [--no-same-permissions] [--numeric-owner] [--owner=NAME]
-            [--preserve-permissions] [--same-permissions] [--preserve]
-            [--same-owner] [--preserve-order] [--same-order] [--file=ARCHIVE]
-            [--force-local] [--info-script=NAME] [--new-volume-script=NAME]
-            [--tape-length=NUMBER] [--multi-volume] [--rmt-command=COMMAND]
-            [--rsh-command=COMMAND] [--volno-file=FILE]
-            [--blocking-factor=BLOCKS] [--read-full-records] [--ignore-zeros]
-            [--record-size=NUMBER] [--format=FORMAT] [--old-archive]
-            [--portability]
-            [--pax-option=keyword[[:]=value][,keyword[[:]=value]]...] [--posix]
-            [--label=TEXT] [--auto-compress] [--use-compress-program=PROG]
-            [--bzip2] [--xz] [--lzip] [--lzma] [--lzop] [--no-auto-compress]
-            [--gzip] [--gunzip] [--ungzip] [--compress] [--uncompress]
-            [--add-file=FILE] [--backup[=CONTROL]] [--directory=DIR]
-            [--exclude=PATTERN] [--exclude-backups] [--exclude-caches]
-            [--exclude-caches-all] [--exclude-caches-under]
-            [--exclude-tag=FILE] [--exclude-tag-all=FILE]
-            [--exclude-tag-under=FILE] [--exclude-vcs] [--dereference]
-            [--hard-dereference] [--starting-file=MEMBER-NAME]
-            [--newer-mtime=DATE] [--no-null] [--no-recursion] [--no-unquote]
-            [--null] [--newer=DATE-OR-FILE] [--after-date=DATE-OR-FILE]
-            [--one-file-system] [--absolute-names] [--recursion]
-            [--suffix=STRING] [--files-from=FILE] [--unquote]
-            [--exclude-from=FILE] [--strip-components=NUMBER]
-            [--transform=EXPRESSION] [--xform=EXPRESSION] [--anchored]
-            [--ignore-case] [--no-anchored] [--no-ignore-case] [--no-wildcards]
-            [--no-wildcards-match-slash] [--wildcards]
-            [--wildcards-match-slash] [--checkpoint[=NUMBER]]
-            [--checkpoint-action=ACTION] [--full-time] [--index-file=FILE]
-            [--check-links] [--no-quote-chars=STRING] [--quote-chars=STRING]
-            [--quoting-style=STYLE] [--block-number] [--show-defaults]
-            [--show-omitted-dirs] [--show-transformed-names]
-            [--show-stored-names] [--totals[=SIGNAL]] [--utc] [--verbose]
-            [--warning=KEYWORD] [--interactive] [--confirmation] [--help]
-            [--restrict] [--usage] [--version] [FILE]...
-</pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>calum@calumlaptop ~<span class="o">]</span><span class="nv">$ </span>tar --usage
+</span><span class='line'>Usage: tar <span class="o">[</span>-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?<span class="o">]</span> <span class="o">[</span>-g FILE<span class="o">]</span> <span class="o">[</span>-f ARCHIVE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>-F NAME<span class="o">]</span> <span class="o">[</span>-L NUMBER<span class="o">]</span> <span class="o">[</span>-b BLOCKS<span class="o">]</span> <span class="o">[</span>-H FORMAT<span class="o">]</span> <span class="o">[</span>-V TEXT<span class="o">]</span> <span class="o">[</span>-I PROG<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>-C DIR<span class="o">]</span> <span class="o">[</span>-K MEMBER-NAME<span class="o">]</span> <span class="o">[</span>-N DATE-OR-FILE<span class="o">]</span> <span class="o">[</span>-T FILE<span class="o">]</span> <span class="o">[</span>-X FILE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--catenate<span class="o">]</span> <span class="o">[</span>--concatenate<span class="o">]</span> <span class="o">[</span>--create<span class="o">]</span> <span class="o">[</span>--diff<span class="o">]</span> <span class="o">[</span>--compare<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--delete<span class="o">]</span> <span class="o">[</span>--append<span class="o">]</span> <span class="o">[</span>--list<span class="o">]</span> <span class="o">[</span>--test-label<span class="o">]</span> <span class="o">[</span>--update<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--extract<span class="o">]</span> <span class="o">[</span>--get<span class="o">]</span> <span class="o">[</span>--check-device<span class="o">]</span> <span class="o">[</span>--listed-incremental<span class="o">=</span>FILE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--incremental<span class="o">]</span> <span class="o">[</span>--ignore-failed-read<span class="o">]</span> <span class="o">[</span>--level<span class="o">=</span>NUMBER<span class="o">]</span> <span class="o">[</span>--seek<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--no-check-device<span class="o">]</span> <span class="o">[</span>--no-seek<span class="o">]</span> <span class="o">[</span>--occurrence<span class="o">[=</span>NUMBER<span class="o">]]</span>
+</span><span class='line'>            <span class="o">[</span>--sparse-version<span class="o">=</span>MAJOR<span class="o">[</span>.MINOR<span class="o">]]</span> <span class="o">[</span>--sparse<span class="o">]</span> <span class="o">[</span>--keep-old-files<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--keep-newer-files<span class="o">]</span> <span class="o">[</span>--no-overwrite-dir<span class="o">]</span> <span class="o">[</span>--overwrite<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--overwrite-dir<span class="o">]</span> <span class="o">[</span>--recursive-unlink<span class="o">]</span> <span class="o">[</span>--remove-files<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--unlink-first<span class="o">]</span> <span class="o">[</span>--verify<span class="o">]</span> <span class="o">[</span>--ignore-command-error<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--no-ignore-command-error<span class="o">]</span> <span class="o">[</span>--to-stdout<span class="o">]</span> <span class="o">[</span>--to-command<span class="o">=</span>COMMAND<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--atime-preserve<span class="o">[=</span>METHOD<span class="o">]]</span> <span class="o">[</span>--delay-directory-restore<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--group<span class="o">=</span>NAME<span class="o">]</span> <span class="o">[</span>--mode<span class="o">=</span>CHANGES<span class="o">]</span> <span class="o">[</span>--mtime<span class="o">=</span>DATE-OR-FILE<span class="o">]</span> <span class="o">[</span>--touch<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--no-delay-directory-restore<span class="o">]</span> <span class="o">[</span>--no-same-owner<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--no-same-permissions<span class="o">]</span> <span class="o">[</span>--numeric-owner<span class="o">]</span> <span class="o">[</span>--owner<span class="o">=</span>NAME<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--preserve-permissions<span class="o">]</span> <span class="o">[</span>--same-permissions<span class="o">]</span> <span class="o">[</span>--preserve<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--same-owner<span class="o">]</span> <span class="o">[</span>--preserve-order<span class="o">]</span> <span class="o">[</span>--same-order<span class="o">]</span> <span class="o">[</span>--file<span class="o">=</span>ARCHIVE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--force-local<span class="o">]</span> <span class="o">[</span>--info-script<span class="o">=</span>NAME<span class="o">]</span> <span class="o">[</span>--new-volume-script<span class="o">=</span>NAME<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--tape-length<span class="o">=</span>NUMBER<span class="o">]</span> <span class="o">[</span>--multi-volume<span class="o">]</span> <span class="o">[</span>--rmt-command<span class="o">=</span>COMMAND<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--rsh-command<span class="o">=</span>COMMAND<span class="o">]</span> <span class="o">[</span>--volno-file<span class="o">=</span>FILE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--blocking-factor<span class="o">=</span>BLOCKS<span class="o">]</span> <span class="o">[</span>--read-full-records<span class="o">]</span> <span class="o">[</span>--ignore-zeros<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--record-size<span class="o">=</span>NUMBER<span class="o">]</span> <span class="o">[</span>--format<span class="o">=</span>FORMAT<span class="o">]</span> <span class="o">[</span>--old-archive<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--portability<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--pax-option<span class="o">=</span>keyword<span class="o">[[</span>:<span class="o">]=</span>value<span class="o">][</span>,keyword<span class="o">[[</span>:<span class="o">]=</span>value<span class="o">]]</span>...<span class="o">]</span> <span class="o">[</span>--posix<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--label<span class="o">=</span>TEXT<span class="o">]</span> <span class="o">[</span>--auto-compress<span class="o">]</span> <span class="o">[</span>--use-compress-program<span class="o">=</span>PROG<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--bzip2<span class="o">]</span> <span class="o">[</span>--xz<span class="o">]</span> <span class="o">[</span>--lzip<span class="o">]</span> <span class="o">[</span>--lzma<span class="o">]</span> <span class="o">[</span>--lzop<span class="o">]</span> <span class="o">[</span>--no-auto-compress<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--gzip<span class="o">]</span> <span class="o">[</span>--gunzip<span class="o">]</span> <span class="o">[</span>--ungzip<span class="o">]</span> <span class="o">[</span>--compress<span class="o">]</span> <span class="o">[</span>--uncompress<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--add-file<span class="o">=</span>FILE<span class="o">]</span> <span class="o">[</span>--backup<span class="o">[=</span>CONTROL<span class="o">]]</span> <span class="o">[</span>--directory<span class="o">=</span>DIR<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--exclude<span class="o">=</span>PATTERN<span class="o">]</span> <span class="o">[</span>--exclude-backups<span class="o">]</span> <span class="o">[</span>--exclude-caches<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--exclude-caches-all<span class="o">]</span> <span class="o">[</span>--exclude-caches-under<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--exclude-tag<span class="o">=</span>FILE<span class="o">]</span> <span class="o">[</span>--exclude-tag-all<span class="o">=</span>FILE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--exclude-tag-under<span class="o">=</span>FILE<span class="o">]</span> <span class="o">[</span>--exclude-vcs<span class="o">]</span> <span class="o">[</span>--dereference<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--hard-dereference<span class="o">]</span> <span class="o">[</span>--starting-file<span class="o">=</span>MEMBER-NAME<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--newer-mtime<span class="o">=</span>DATE<span class="o">]</span> <span class="o">[</span>--no-null<span class="o">]</span> <span class="o">[</span>--no-recursion<span class="o">]</span> <span class="o">[</span>--no-unquote<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--null<span class="o">]</span> <span class="o">[</span>--newer<span class="o">=</span>DATE-OR-FILE<span class="o">]</span> <span class="o">[</span>--after-date<span class="o">=</span>DATE-OR-FILE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--one-file-system<span class="o">]</span> <span class="o">[</span>--absolute-names<span class="o">]</span> <span class="o">[</span>--recursion<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--suffix<span class="o">=</span>STRING<span class="o">]</span> <span class="o">[</span>--files-from<span class="o">=</span>FILE<span class="o">]</span> <span class="o">[</span>--unquote<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--exclude-from<span class="o">=</span>FILE<span class="o">]</span> <span class="o">[</span>--strip-components<span class="o">=</span>NUMBER<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--transform<span class="o">=</span>EXPRESSION<span class="o">]</span> <span class="o">[</span>--xform<span class="o">=</span>EXPRESSION<span class="o">]</span> <span class="o">[</span>--anchored<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--ignore-case<span class="o">]</span> <span class="o">[</span>--no-anchored<span class="o">]</span> <span class="o">[</span>--no-ignore-case<span class="o">]</span> <span class="o">[</span>--no-wildcards<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--no-wildcards-match-slash<span class="o">]</span> <span class="o">[</span>--wildcards<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--wildcards-match-slash<span class="o">]</span> <span class="o">[</span>--checkpoint<span class="o">[=</span>NUMBER<span class="o">]]</span>
+</span><span class='line'>            <span class="o">[</span>--checkpoint-action<span class="o">=</span>ACTION<span class="o">]</span> <span class="o">[</span>--full-time<span class="o">]</span> <span class="o">[</span>--index-file<span class="o">=</span>FILE<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--check-links<span class="o">]</span> <span class="o">[</span>--no-quote-chars<span class="o">=</span>STRING<span class="o">]</span> <span class="o">[</span>--quote-chars<span class="o">=</span>STRING<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--quoting-style<span class="o">=</span>STYLE<span class="o">]</span> <span class="o">[</span>--block-number<span class="o">]</span> <span class="o">[</span>--show-defaults<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--show-omitted-dirs<span class="o">]</span> <span class="o">[</span>--show-transformed-names<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--show-stored-names<span class="o">]</span> <span class="o">[</span>--totals<span class="o">[=</span>SIGNAL<span class="o">]]</span> <span class="o">[</span>--utc<span class="o">]</span> <span class="o">[</span>--verbose<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--warning<span class="o">=</span>KEYWORD<span class="o">]</span> <span class="o">[</span>--interactive<span class="o">]</span> <span class="o">[</span>--confirmation<span class="o">]</span> <span class="o">[</span>--help<span class="o">]</span>
+</span><span class='line'>            <span class="o">[</span>--restrict<span class="o">]</span> <span class="o">[</span>--usage<span class="o">]</span> <span class="o">[</span>--version<span class="o">]</span> <span class="o">[</span>FILE<span class="o">]</span>...
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Wow!</p>
@@ -221,9 +336,12 @@ Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
   <entry>
     <title type="html"><![CDATA[Becoming a Polyglot Programmer.]]></title>
     <link href="http://calumhalcrow.com/blog/2012/07/29/becoming-a-polyglot-programmer/"/>
-    <updated>2012-07-29T08:42:00+01:00</updated>
+    <updated>2012-07-29T08:42:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/07/29/becoming-a-polyglot-programmer</id>
     <content type="html"><![CDATA[<p>[I&rsquo;m referring to being a programmer who is comfortable using several languages here, rather than a system built with several different programming languages.]</p>
+
+<!-- more -->
+
 
 <p>I spend most of my time programming in only two languages: Perl and JavaScript. I often feel I&rsquo;d like to learn a few more, or at least sample a few more. I often find this hard to do however as step-by-step beginner tutorials don&rsquo;t rub off on me too well, and taking on a full side-project can be overkill when all you want to do is try out a language (I&rsquo;m slowing becoming more and more familiar with the Python universe because of one; not necessarily a bad thing!).</p>
 
@@ -251,11 +369,11 @@ Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
   <entry>
     <title type="html"><![CDATA[Equality Check.]]></title>
     <link href="http://calumhalcrow.com/blog/2012/05/09/equality-check/"/>
-    <updated>2012-05-09T05:45:00+01:00</updated>
+    <updated>2012-05-09T05:45:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/05/09/equality-check</id>
-    <content type="html"><![CDATA[<pre>
-if (' ABCD ' =~ / $c /) {
-</pre>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="s">&#39; ABCD &#39;</span> <span class="o">=~</span><span class="sr"> / $c /</span><span class="p">)</span> <span class="p">{</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Witnessed by me today in some code I was refactoring.</p>
@@ -267,9 +385,12 @@ if (' ABCD ' =~ / $c /) {
   <entry>
     <title type="html"><![CDATA[Instead of 'quitting' Facebook.]]></title>
     <link href="http://calumhalcrow.com/blog/2012/01/09/instead-of-quitting-facebook/"/>
-    <updated>2012-01-09T08:49:00+00:00</updated>
+    <updated>2012-01-09T08:49:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/01/09/instead-of-quitting-facebook</id>
     <content type="html"><![CDATA[<p>&hellip;just cut out a lot of the noise. Try taking the following steps:</p>
+
+<!-- more -->
+
 
 <ul>
 <li>Unsubscribe from friends who get on your nerves.</li>

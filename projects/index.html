@@ -1,108 +1,73 @@
+  <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Calum Halcrow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
 
-<!DOCTYPE HTML>
-<html>
-<head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<meta charset="utf-8">
-	<title>Projects | Calum Halcrow</title>
+    <title>Projects - Calum Halcrow</title>
 
-<meta name="author" content="Calum Halcrow"> 
+    
+    <meta name="description" content="Projects Here&rsquo;s a run-down of some of the projects I&rsquo;ve been involved in. The &ldquo;Tech stack&rdquo; underneath each lists major &hellip;">
+    
 
-<meta name="description" content="Projects Here&rsquo;s a run-down of some of the projects I&rsquo;ve been involved in. The &ldquo;Tech stack&rdquo; underneath each lists major &hellip;"> <meta name="keywords" content="">
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link rel="canonical" href="http://calumhalcrow.com/projects">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="/atom.xml" rel="alternate" title="Calum Halcrow" type="application/atom+xml">
+    <script src="/javascripts/modernizr-2.0.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+    <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  </head>
 
-	<link href="/atom.xml" rel="alternate" title="Calum Halcrow" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+  
+  <body>
+    <div id="layout" class="pure-g">
+      <div class="sidebar pure-u-1 pure-u-md-1-4">
+  <div class="header">
+    <h1 class="brand-title"><a href="/">Calum Halcrow</a></h1>
+    <h2 class="brand-tagline">Web developer based in KL, MY.</h2>
 
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
-
-	
-</head>
-
-
-
-<body>
-	<header id="header" class="inner"><h1><a href="/">Calum Halcrow</a></h1>
-<nav id="main-nav"><ul>
-	<li><a href="/blog">Blog</a></li>
-	<li><a href="/projects">Projects</a></li>
-	<li><a href="http://github.com/calumhalcrow">Github</a></li>
-</ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/blog">Blog</a></li>
-	<li><a href="/projects">Projects</a></li>
-	<li><a href="http://github.com/calumhalcrow">Github</a></li>
-</ul>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="pure-button" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="pure-button" href="/projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="pure-button" href="http://github.com/calumhalcrow" target="_new">Github</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:calumhalcrow.com">
-			</form>
-		</div>
-	</div>
-</nav>
 
 
+      <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+          <header class="post-header">
+  <h2 class="post-title">Projects</h2>
 </header>
 
-	<div id="content" class="inner"><article class="page">
-    <div class="entry-content"><h2 class="title">Projects</h2>
-
-
-<p>Here&rsquo;s a run-down of some of the projects I&rsquo;ve been involved in. The &ldquo;Tech stack&rdquo; underneath each lists major technologies used in the project, in particular the ones I am most familiar with.</p>
+<section class="post">
+  <div class="post-description">
+    <p>Here&rsquo;s a run-down of some of the projects I&rsquo;ve been involved in. The &ldquo;Tech stack&rdquo; underneath each lists major technologies used in the project, in particular the ones I am most familiar with.</p>
 
 <h3><a href="http://mindvalley.com">Mindvalley</a></h3>
 
 <p>Up until April 2014 I worked at Mindvalley, developing web-apps that supported their core business. Because Mindvalley market and sell wellness products, their portfolio of internal apps include: sophisticated campaign tracking services, an e-commerce platform, <abbr title="Email Service Provider">ESP</abbr> integrations and more, all of which I helped develop.</p>
 
-<p>Tech stack: <a href="http://ruby-lang.org">Ruby</a>, <a href="http://rubyonrails.org">Rails</a>, <a href="http://rspec.info">RSpec</a>, <a href="http://www.capistranorb.com">Capistrano</a>, <a href="http://postgresql.org">PostGreSQL</a>, <a href="http://www.mongodb.org">MongoDB</a>, <a href="https://www.linode.com">Linode</a></p>
+<p>Tech stack: <a href="http://ruby-lang.org">Ruby</a>, <a href="http://rubyonrails.org">Rails</a>, <a href="http://rspec.info">RSpec</a>, <a href="http://www.capistranorb.com">Capistrano</a>, <a href="http://postgresql.org">PostGreSQL</a>, <a href="http://www.mongodb.org">MongoDB</a>, <a href="https://www.linode.com">Linode</a>.</p>
 
 <h3><a href="http://binary.com">Binary.com</a></h3>
 
@@ -139,30 +104,26 @@ $(document).ready(
 <p>A site that I set up some time ago for the Cunningsburgh History Group, a community-based organisation from the village where I grew up. I handed over content administration to the group themselves, so the site largely runs itself.</p>
 
 <p>Tech stack: <a href="http://modx.com">MODX</a>, DreamHost.</p>
+
+  </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+  <div class="pure-menu pure-menu-horizontal pure-menu-open">
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="http://github.com/calumhalcrow" target="_new">GitHub</a></li>
+      <li><a href="http://twitter.com/calumhalcrow" target="_new">Twitter</a></li>
+      <li><a href="http://linkedin.com/calumhalcrow" target="_new">LinkedIn</a></li>
+      <li><a href="http://facebook.com/calumhalcrow" target="_new">Facebook</a></li>
+    </ul>
+  </div>
 </div>
-</article>
 
-
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
-
-    Calum Halcrow
-
-<br>
-Powered by Octopress.
-</footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
-
-
-
-
-
-
-</body>
+  </body>
 </html>
