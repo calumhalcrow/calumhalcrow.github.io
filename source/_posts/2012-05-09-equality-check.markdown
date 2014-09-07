@@ -6,9 +6,9 @@ comments: true
 categories: 
 ---
 
-<pre>
+``` perl
 if (' ABCD ' =~ / $c /) {
-</pre>
+```
 
 Witnessed by me today in some code I was refactoring.
 

@@ -2,12 +2,7 @@
 layout: page
 title: "Projects"
 date: 2014-01-26 04:30
-comments: true
-sharing: true
-footer: true
 ---
-
-<h2 class="title">Projects</h2>
 
 Here's a run-down of some of the projects I've been involved in. The "Tech stack" underneath each lists major technologies used in the project, in particular the ones I am most familiar with.
 
@@ -15,7 +10,7 @@ Here's a run-down of some of the projects I've been involved in. The "Tech stack
 
 Up until April 2014 I worked at Mindvalley, developing web-apps that supported their core business. Because Mindvalley market and sell wellness products, their portfolio of internal apps include: sophisticated campaign tracking services, an e-commerce platform, <abbr title="Email Service Provider">ESP</abbr> integrations and more, all of which I helped develop.
 
-Tech stack: [Ruby][33], [Rails][32], [RSpec][29], [Capistrano][35], [PostGreSQL][4], [MongoDB][36], [Linode][37]
+Tech stack: [Ruby][33], [Rails][32], [RSpec][29], [Capistrano][35], [PostGreSQL][4], [MongoDB][36], [Linode][37].
 
 [33]: http://ruby-lang.org
 [35]: http://www.capistranorb.com

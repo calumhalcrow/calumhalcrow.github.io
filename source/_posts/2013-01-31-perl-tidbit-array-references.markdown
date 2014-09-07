@@ -8,7 +8,9 @@ categories:
 
 It can be useful to know the difference between `\@a` and `[@a]` for an array `@a` with regard to array references. Take a look at the little script below:
 
-<pre>
+<!-- more -->
+
+``` perl
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -26,14 +28,14 @@ $\ = "\n";
 print $r1;
 print $r2;
 print join ',', @a;
-</pre>
+```
 
 which prints:
 
-<pre>
+``` perl
 ARRAY(0x155ac98)
 ARRAY(0x155abf0)  # different from first
 x,3,5
-</pre>
+```
 
 `\@a` gives you a reference to `@a`, which you can use to directly modify the array. `[@a]` creates a reference to a new array with the same content as `@a`, handy if you'd like a "copy" of `@a` but do not wish to modify it through the reference.

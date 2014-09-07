@@ -8,6 +8,8 @@ categories:
 
 [cancan](https://github.com/ryanb/cancan) is an authentication gem for Rails. It can be used to restrict access to certain parts of your web-app based on classifications you give to your users.
 
+<!-- more -->
+
 You can get it working on your app by following the instructions on its [Github page](https://github.com/ryanb/cancan#installation).
 
 cancan allows you to work with two concepts: roles and abilities. A role is a classification that you give to a set of your users, an ability is something users with that role can do.
@@ -20,18 +22,18 @@ The way in which you define and assign roles to your users is left up to you. ca
 
 Once you can ask such questions, you use cancan's Ability class to define abilities for each user role. On Daily we have something like:
 
-<pre>
-    if user.admin?
-      can :manage, :all
-    elsif user.manager?
-      can :manage, :all
-      cannot :update, User
-    elsif user.marketer?
-      can :manage, :all
-      cannot :update, User
-      cannot :bundles_report, ProductLinesClient
-    end
-</pre>
+``` ruby
+if user.admin?
+  can :manage, :all
+elsif user.manager?
+  can :manage, :all
+  cannot :update, User
+elsif user.marketer?
+  can :manage, :all
+  cannot :update, User
+  cannot :bundles_report, ProductLinesClient
+end
+```
 
 <p>This is (almost) understandable just by reading the code out load. "Admins can manage everything." "Managers can manage everything but they cannot update users". You may be wondering why I've repeated "can :manage, :all" three times here. Surely that's not very <abbr title="Don't Repeat Yourself">DRY</abbr>. Well, I feel it reads more naturally this way, and doesn't allow for a user with a rogue role to slip into the system and have access to everything (prizes up for grabs for better solutions though; just send me a pull request ;-).
 

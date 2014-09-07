@@ -8,6 +8,8 @@ categories:
 
 ...just cut out a lot of the noise. Try taking the following steps:
 
+<!-- more -->
+
 *   Unsubscribe from friends who get on your nerves.
 *   Turn off notifications from any groups you like to be part of, but update often causing constant notifications.
 *   Subscribe to "important updates only" from friends who you like to hear from but are a bit too chatty.

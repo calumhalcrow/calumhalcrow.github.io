@@ -3,10 +3,12 @@ layout: post
 title: "Becoming a Polyglot Programmer."
 date: 2012-07-29 08:42
 comments: true
-categories: 
+categories: perl, javascript
 ---
 
 [I'm referring to being a programmer who is comfortable using several languages here, rather than a system built with several different programming languages.]
+
+<!-- more -->
 
 I spend most of my time programming in only two languages: Perl and JavaScript. I often feel I'd like to learn a few more, or at least sample a few more. I often find this hard to do however as step-by-step beginner tutorials don't rub off on me too well, and taking on a full side-project can be overkill when all you want to do is try out a language (I'm slowing becoming more and more familiar with the Python universe because of one; not necessarily a bad thing!).
 

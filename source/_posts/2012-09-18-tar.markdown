@@ -6,7 +6,8 @@ comments: true
 categories: 
 ---
 
-<pre>[calum@calumlaptop ~]$ tar --help
+``` bash
+[calum@calumlaptop ~]$ tar --help
 Usage: tar [OPTION...] [FILE]...
 GNU `tar' saves many files together into a single tape or disk archive, and can
 restore individual files from the archive.
@@ -24,11 +25,13 @@ Examples:
       --restrict             disable use of some potentially harmful options
       --usage                give a short usage message
 ...
-</pre>
+```
+
+<!-- more -->
 
 Aha! I fancy some of that "short usage message"...
 
-<pre>
+``` bash
 [calum@calumlaptop ~]$ tar --usage
 Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
             [-F NAME] [-L NUMBER] [-b BLOCKS] [-H FORMAT] [-V TEXT] [-I PROG]
@@ -81,7 +84,7 @@ Usage: tar [-AcdrtuxGnSkUWOmpsMBiajJzZhPlRvwo?] [-g FILE] [-f ARCHIVE]
             [--show-stored-names] [--totals[=SIGNAL]] [--utc] [--verbose]
             [--warning=KEYWORD] [--interactive] [--confirmation] [--help]
             [--restrict] [--usage] [--version] [FILE]...
-</pre>
+```
 
 Wow!
 
