@@ -1,3 +1,6 @@
 [submodule ".themes/cleanpress"]
 	path = .themes/cleanpress
 	url = git@github.com:calumhalcrow/cleanpress.git
+[submodule ".themes/pure-octopress-theme"]
+	path = .themes/pure-octopress-theme
+	url = git@github.com:calumhalcrow/pure-octopress-theme.git
