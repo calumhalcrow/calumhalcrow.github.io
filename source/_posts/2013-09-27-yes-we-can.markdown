@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Yes we can, yes we cancan."
+title: "Yes we can, yes we cancan"
 date: 2013-09-27 08:22
 comments: true
 categories: 

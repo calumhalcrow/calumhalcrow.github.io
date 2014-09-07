@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Becoming a Polyglot Programmer."
+title: "Becoming a Polyglot Programmer"
 date: 2012-07-29 08:42
 comments: true
 categories: perl, javascript

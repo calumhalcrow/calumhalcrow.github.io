@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Perl tidbit: array references."
+title: "Perl tidbit: array references"
 date: 2013-01-31 06:27
 comments: true
 categories: 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Instead of 'quitting' Facebook."
+title: "Instead of 'quitting' Facebook"
 date: 2012-01-09 08:49
 comments: true
 categories: 

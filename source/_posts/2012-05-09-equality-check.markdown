@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Equality Check."
+title: "Equality Check"
 date: 2012-05-09 05:45
 comments: true
 categories: 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Knowledge Sharing Push and Pull."
+title: "Knowledge Sharing Push and Pull"
 date: 2012-09-20 05:34
 comments: true
 categories: 
