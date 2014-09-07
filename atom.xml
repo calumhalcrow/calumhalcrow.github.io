@@ -4,7 +4,7 @@
   <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.com/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.com/"/>
-  <updated>2014-09-07T12:25:56+08:00</updated>
+  <updated>2014-09-07T12:46:38+08:00</updated>
   <id>http://calumhalcrow.com/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Export a commit range to patch files]]></title>
+    <link href="http://calumhalcrow.com/blog/2014/09/03/export-a-commit-range-to-patch-files/"/>
+    <updated>2014-09-03T12:40:00+08:00</updated>
+    <id>http://calumhalcrow.com/blog/2014/09/03/export-a-commit-range-to-patch-files</id>
+    <content type="html"><![CDATA[<p>Today I found myself in a position where a Git repo I am contributing to was to going to have its history significantly altered. Sensitive information was to be completely removed from the repo, and when done the repo would basically be a single commit on the master branch, with all other branches deleted.</p>
+
+<!-- more -->
+
+
+<p>But there were several open pull requests against master that would not get merged before this work was carried out. I had to save the commits in these PRs offline until the repo had been adjusted, then reapply them and re-open the PRs.</p>
+
+<p>Here’s one way that this can be done:</p>
+
+<h2>Commit range to patch files:</h2>
+
+<p>Ensuring you have your topic branch checked out and that it has some commits on it,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git checkout topic-branch
+</span><span class='line'><span class="nv">$ </span>git log --oneline origin/master..
+</span><span class='line'>898ea0f Adds more padding to footer.
+</span><span class='line'>c455b4f Makes header text blue.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>you can make a patch out of each commit with the <a href="http://git-scm.com/docs/git-format-patch">git format-patch</a> command:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git format-patch origin/master..
+</span><span class='line'>0001-Makes-header-text-blue.patch
+</span><span class='line'>0002-Adds-more-padding-to-footer.patch
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For each commit, we now have a patch file that can be saved offline and reapplied later:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ls -l *.patch
+</span><span class='line'>-rw-r--r--  1 calum  staff  680 Sep  3 08:55 0001-Makes-header-text-blue.patch
+</span><span class='line'>-rw-r--r--  1 calum  staff  684 Sep  3 08:55 0002-Adds-more-padding-to-footer.patch
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To reapply, move the patches to a directory outside of the repo (I moved mine to my home dir), checkout master and use the <a href="http://git-scm.com/docs/git-am">git am</a> command:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>mv *.patch ~
+</span><span class='line'><span class="nv">$ </span>git checkout master
+</span><span class='line'>Switched to branch ‘master<span class="err">&#39;</span>
+</span><span class='line'><span class="nv">$ </span>git am ~/*.patch
+</span><span class='line'>Applying: Makes header text blue.
+</span><span class='line'>Applying: Adds more padding to footer.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now the commits have be reapplied onto master. From here you can create a new branch, push it and re-open your pull requests.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Blogging Setup]]></title>
