@@ -4,7 +4,7 @@
   <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.com/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.com/"/>
-  <updated>2014-09-07T12:46:38+08:00</updated>
+  <updated>2014-09-07T12:50:45+08:00</updated>
   <id>http://calumhalcrow.com/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
@@ -105,7 +105,7 @@ with full control over my site yet with almost embarrassingly minimal setup work
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Yes we can, yes we cancan.]]></title>
+    <title type="html"><![CDATA[Yes we can, yes we cancan]]></title>
     <link href="http://calumhalcrow.com/blog/2013/09/27/yes-we-can/"/>
     <updated>2013-09-27T08:22:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2013/09/27/yes-we-can</id>
@@ -160,7 +160,7 @@ with full control over my site yet with almost embarrassingly minimal setup work
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Perl tidbit: array references.]]></title>
+    <title type="html"><![CDATA[Perl tidbit: array references]]></title>
     <link href="http://calumhalcrow.com/blog/2013/01/31/perl-tidbit-array-references/"/>
     <updated>2013-01-31T06:27:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2013/01/31/perl-tidbit-array-references</id>
@@ -224,7 +224,7 @@ with full control over my site yet with almost embarrassingly minimal setup work
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Knowledge Sharing Push and Pull.]]></title>
+    <title type="html"><![CDATA[Knowledge Sharing Push and Pull]]></title>
     <link href="http://calumhalcrow.com/blog/2012/09/20/knowledge-sharing-push-and-pull/"/>
     <updated>2012-09-20T05:34:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/09/20/knowledge-sharing-push-and-pull</id>
@@ -406,7 +406,7 @@ with full control over my site yet with almost embarrassingly minimal setup work
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Becoming a Polyglot Programmer.]]></title>
+    <title type="html"><![CDATA[Becoming a Polyglot Programmer]]></title>
     <link href="http://calumhalcrow.com/blog/2012/07/29/becoming-a-polyglot-programmer/"/>
     <updated>2012-07-29T08:42:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/07/29/becoming-a-polyglot-programmer</id>
@@ -439,7 +439,7 @@ with full control over my site yet with almost embarrassingly minimal setup work
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Equality Check.]]></title>
+    <title type="html"><![CDATA[Equality Check]]></title>
     <link href="http://calumhalcrow.com/blog/2012/05/09/equality-check/"/>
     <updated>2012-05-09T05:45:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/05/09/equality-check</id>
@@ -455,7 +455,7 @@ with full control over my site yet with almost embarrassingly minimal setup work
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Instead of 'quitting' Facebook.]]></title>
+    <title type="html"><![CDATA[Instead of 'quitting' Facebook]]></title>
     <link href="http://calumhalcrow.com/blog/2012/01/09/instead-of-quitting-facebook/"/>
     <updated>2012-01-09T08:49:00+08:00</updated>
     <id>http://calumhalcrow.com/blog/2012/01/09/instead-of-quitting-facebook</id>
