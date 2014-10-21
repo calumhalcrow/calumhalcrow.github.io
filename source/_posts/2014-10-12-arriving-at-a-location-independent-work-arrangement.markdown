@@ -30,7 +30,7 @@ The book [Remote](http://37signals.com/remote/) discusses such advantages in gre
 
 ## A Reality
 
-When [Nick Marden](http://marden.org) reached out to me about joining [Rapid River](http://www.rrsoft.co/), his 100% remote software development consulting company, I jumped at the chance to get on board, and since April 2014 I have been working from my home with teams on the other side of the world from me.
+When [Nick Marden](https://www.linkedin.com/profile/view?id=799165) reached out to me about joining [Rapid River Software](http://www.rrsoft.co/), his 100% remote software development consulting company, I jumped at the chance to get on board, and since April 2014 I have been working from my home with teams on the other side of the world from me.
 
 When I mention this working arrangement to other people, I often get asked about the difficulties people imagine they’d have if they were in a similar position. Since it’s been over six months since I started, here’s a summary of my experience so far presented by answering some of the questions I often hear:
 
