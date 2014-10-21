@@ -54,4 +54,4 @@ There’s a number of things that can be done to deal with this:
 
 ## A reality for you too?
 
-I suspect this style of working isn’t for everyone. It requires a high level of self-decsipline and a desire to be independent. However, I think many developers are attracted to it. Making the jump from the familiar "9-5" can be difficult though. If you’re toying with the idea of making such a jump and want to talk to someone who’s been though it, I’d be happy to talk to you. Just reach out to me via the contact channels on this site and I’ll respond. I might even be able to hook you up with some work ;-)
+I suspect this style of working isn’t for everyone. It requires a high level of self-discipline and a desire to be independent. However, I think many developers are attracted to it. Making the jump from the familiar "9-5" can be difficult though. If you’re toying with the idea of making such a jump and want to talk to someone who’s been though it, I’d be happy to talk to you. Just reach out to me via the contact channels on this site and I’ll respond. I might even be able to hook you up with some work ;-)
