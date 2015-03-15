@@ -4,7 +4,7 @@
   <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.com/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.com/"/>
-  <updated>2014-10-21T12:17:32+08:00</updated>
+  <updated>2015-03-15T11:57:47+08:00</updated>
   <id>http://calumhalcrow.com/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bukit Gasing Trails]]></title>
+    <link href="http://calumhalcrow.com/blog/2015/03/15/bukit-gasing-trails/"/>
+    <updated>2015-03-15T11:01:00+08:00</updated>
+    <id>http://calumhalcrow.com/blog/2015/03/15/bukit-gasing-trails</id>
+    <content type="html"><![CDATA[<p>Bukit Gasing Trails was a website I created showing the various hiking trails that exist in the <a href="http://www.bukitgasing.org/bukitgasingforestpark.htm">Bukit Gasing Forest Park</a>.</p>
+
+<!-- more -->
+
+
+<p>At the time the site was built only partial information about trail routes was available online. However, in recent years the park&rsquo;s trails and points of interest have been added to <a href="http://www.openstreetmap.org/#map=16/3.0974/101.6570">Open Street Map</a>. Since OSM provides more information and will continue to do so (given its crowd-sourced nature) I have decided to bring Bukit Gasing Trails down.</p>
+
+<p>The site&rsquo;s source code is still <a href="https://github.com/calumhalcrow/bukit-gasing-trails">available on Github</a>. Building it exposed me to the world of static websites generators like <a href="http://jekyllrb.com/">Jekyll</a>, and to the Google Maps API. If you&rsquo;d like to see what the site looked like, here it is:</p>
+
+<p><img src="http://calumhalcrow.com/images/bukit-gasing-trails.jpg" alt="Bukit Gasing Trails" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arriving at a location-independent work arrangement]]></title>
