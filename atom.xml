@@ -4,7 +4,7 @@
   <title><![CDATA[Calum Halcrow]]></title>
   <link href="http://calumhalcrow.com/atom.xml" rel="self"/>
   <link href="http://calumhalcrow.com/"/>
-  <updated>2015-03-15T11:57:47+08:00</updated>
+  <updated>2015-03-15T12:08:44+08:00</updated>
   <id>http://calumhalcrow.com/</id>
   <author>
     <name><![CDATA[Calum Halcrow]]></name>
@@ -27,7 +27,8 @@
 
 <p>The site&rsquo;s source code is still <a href="https://github.com/calumhalcrow/bukit-gasing-trails">available on Github</a>. Building it exposed me to the world of static websites generators like <a href="http://jekyllrb.com/">Jekyll</a>, and to the Google Maps API. If you&rsquo;d like to see what the site looked like, here it is:</p>
 
-<p><img src="http://calumhalcrow.com/images/bukit-gasing-trails.jpg" alt="Bukit Gasing Trails" /></p>
+<p><img src="http://calumhalcrow.com/images/bgt1.jpg" alt="High-level" />
+<img src="http://calumhalcrow.com/images/bgt2.jpg" alt="Details" /></p>
 ]]></content>
   </entry>
   
